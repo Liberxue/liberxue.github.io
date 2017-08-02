@@ -1,0 +1,1323 @@
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+	  <meta http-equiv="x-dns-prefetch-control" content="on">   
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+	  <meta http-equiv="Cache-Control" content="no-siteapp"/>  
+    <title>LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="{% for post in site.posts %}    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}    {% capture nex..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content=" - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="{% for post in site.posts %}    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}    {% capture nex..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content=" - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="{% for post in site.posts %}    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}    {% capture nex..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="{% for post in site.posts %}    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}    {% capture nex..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000' property='og:url' />
+  <meta content="Full Stack独立开发者|欢迎来到 LiberXue「角落」侃侃理想、谈谈人生、敲敲代码。" property='og:description' />
+  <meta content="blog" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="bg-grey" gtools_scp_screen_capture_injected="true"><div id="MathJax_Message" style="display: none;"></div>
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                        
+            <a href="/?liberxue"  title="访问 首页" data-hover="首页">首页</a>
+                             
+            <a href="/book?liberxue"  title="访问 书籍" data-hover="书籍">书籍</a>
+                             
+            <a href="/road?liberxue"  title="访问 旅游" data-hover="旅游">旅游</a>
+                             
+            <a href="/archives?liberxue"  title="访问 归档" data-hover="归档">归档</a>
+                             
+            <a href="/tags?liberxue"  title="访问 标签" data-hover="标签">标签</a>
+                             
+            <a href="/about?liberxue"  title="访问 关于" data-hover="关于">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form method="post" action="/404.html" role="search">
+                <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+                </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="/?liberxue" title="访问 首页" data-hover="首页">首页</a></li>
+                            
+                <li><a href="/book?liberxue" title="访问 书籍" data-hover="书籍">书籍</a></li>
+                            
+                <li><a href="/road?liberxue" title="访问 旅游" data-hover="旅游">旅游</a></li>
+                            
+                <li><a href="/archives?liberxue" title="访问 归档" data-hover="归档">归档</a></li>
+                            
+                <li><a href="/tags?liberxue" title="访问 标签" data-hover="标签">标签</a></li>
+                            
+                <li><a href="/about?liberxue" title="访问 关于" data-hover="关于">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+
+      <main class="tl f6 relative pa4 pa5-ns overflow-hidden">
+        
+        <div class="markdown-body">
+          <div class="main-content archive-page clearfix">
+
+    
+    
+    
+  	<div class="categorys-item">
+	<div class="categorys-title" id="2017">
+			2017
+		</div>
+   <div class="post-lists">
+	<div class="post-lists-body">
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-28 10:04:49 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Javascript"  data-hover="Javascript">Javascript </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-23 00:04:49 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Python"  data-hover="Python">Python </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/19/nginxconf.html" title="访问 Nginx配置文件之nginx.conf详解笔记">Nginx配置文件之nginx.conf详解笔记</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-19 19:02:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#nginx"  data-hover="nginx">nginx </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-17 08:45:16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#linux内核"  data-hover="linux内核">linux内核 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-17 07:45:56 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#git"  data-hover="git">git </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-13 08:39:03 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#微信读书"  data-hover="微信读书">微信读书 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/07/dockerkailinux.html" title="访问 Mac docker kail linux 安装踩过的坑">Mac docker kail linux 安装踩过的坑</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-07 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#docker"  data-hover="docker">docker </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-04 07:13:54 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#书籍"  data-hover="书籍">书籍 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-04 07:13:54 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#书籍"  data-hover="书籍">书籍 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/07/03/tomcatmoredomain.html" title="访问 linux环境tomcat多域名指向多项目server xml配置">linux环境tomcat多域名指向多项目server xml配置</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-07-03 07:04:19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#tomcat"  data-hover="tomcat">tomcat </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/30/serverss.html" title="访问 Aws EC2+Ubuntu+ShadowsocksR服务端安装教程">Aws EC2+Ubuntu+ShadowsocksR服务端安装教程</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-30 07:54:19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#ss"  data-hover="ss">ss </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-28 07:43:54 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#书籍"  data-hover="书籍">书籍 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/27/sikaobook.html" title="访问 思考快与慢">思考快与慢</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-27 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#书籍"  data-hover="书籍">书籍 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/24/netcore.html" title="访问 .NET Core 2017试水哈">.NET Core 2017试水哈</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-24 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#csharp"  data-hover="csharp">csharp </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/23/awsss.html" title="访问 Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss">Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-23 07:54:19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#ss"  data-hover="ss">ss </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/20/santibook.html" title="访问 看完三体，三体Ⅱ·黑暗森林，三体Ⅲ·死神永生全集一些所感所想">看完三体，三体Ⅱ·黑暗森林，三体Ⅲ·死神永生全集一些所感所想</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-20 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#书籍"  data-hover="书籍">书籍 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/20/nginxphpserver.html" title="访问 nginx中server配置的共同部分抽取linux反向代理php">nginx中server配置的共同部分抽取linux反向代理php</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-20 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#nginx"  data-hover="nginx">nginx </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/20/mactree.html" title="访问 多方法使Mac生成显示目录树形结构">多方法使Mac生成显示目录树形结构</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-20 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Mac"  data-hover="Mac">Mac </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/17/jekyll.html" title="访问 Jekyll 的一些函数和技巧">Jekyll 的一些函数和技巧</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-17 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#makrdown"  data-hover="makrdown">makrdown </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/06/14/chuangye.html" title="访问 夜深人静时复盘一下曾经的失败">夜深人静时复盘一下曾经的失败</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-06-14 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#年少轻狂"  data-hover="年少轻狂">年少轻狂 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/05/13/WannaCry2.html" title="访问 关于“全球遭受网络勒索攻击”WannaCry2.0病毒软件图文分析">关于“全球遭受网络勒索攻击”WannaCry2.0病毒软件图文分析</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-05-13 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#loop"  data-hover="loop">loop </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/05/13/csharpinstall.html" title="访问 c#写一个自动安装包带7z自动解压释放安装">c#写一个自动安装包带7z自动解压释放安装</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-05-13 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#csharp"  data-hover="csharp">csharp </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/05/02/compiler-grammar.html" title="访问 计算机编译原理---四种类型文法">计算机编译原理---四种类型文法</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-05-02 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#debug"  data-hover="debug">debug </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/04/16/mac-maven.html" title="访问 mac中安装maven3.5.0">mac中安装maven3.5.0</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-04-16 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Mac"  data-hover="Mac">Mac </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/22/loopand-iterate.html" title="访问 循环.迭代.遍历.递归|区别.解释.说明.对比">循环.迭代.遍历.递归|区别.解释.说明.对比</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#loop"  data-hover="loop">loop </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/22/Macspctl.html" title="访问 Mac开启任何来源">Mac开启任何来源</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Mac"  data-hover="Mac">Mac </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/19/Mac-sip.html" title="访问 testtMac OS X El Capitan 关闭sip">testtMac OS X El Capitan 关闭sip</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-19 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Mac"  data-hover="Mac">Mac </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/15/iptables-bj.html" title="访问 iptables防火墙使用笔记">iptables防火墙使用笔记</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-15 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#router"  data-hover="router">router </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/15/rCSharpeference-bj.html" title="访问 C#将DLL嵌入整合reference到成为独立exe打包">C#将DLL嵌入整合reference到成为独立exe打包</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-15 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#csharp"  data-hover="csharp">csharp </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/07/VChdlocker-qq.html" title="访问 公布了x讯管家漏洞QQ永久封号">公布了x讯管家漏洞QQ永久封号</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-07 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#vc"  data-hover="vc">vc </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/03/07/githubyaunchengjiami.html" title="访问 GitHub当作私密的版本控制系统远端版本库私有化哈">GitHub当作私密的版本控制系统远端版本库私有化哈</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-03-07 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#git"  data-hover="git">git </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2017/01/22/wechart-codecaceh.html" title="访问 微信开发调试阶段浏览器缓存">微信开发调试阶段浏览器缓存</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2017-01-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#微信"  data-hover="微信">微信 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+            </div>
+	</div>
+  	</div>
+     	<div class="categorys-item">
+			 	<div class="categorys-title" id="2016">
+			2016
+		</div>
+        <div class="post-lists">
+			<div class="post-lists-body">
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/09/22/Chromium-code.html" title="访问 源码编译cef3(Chromium) 在Windows上从加入mp3支持">源码编译cef3(Chromium) 在Windows上从加入mp3支持</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-09-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#csharp"  data-hover="csharp">csharp </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/09/22/QQTencent.html" title="访问 c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理">c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-09-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#csharp"  data-hover="csharp">csharp </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/06/16/UnityWebPlayer.html" title="访问 c#创建可动态修改src的unity3d插件UnityWebPlayer">c#创建可动态修改src的unity3d插件UnityWebPlayer</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-06-16 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#csharp"  data-hover="csharp">csharp </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/06/15/phantomJs.html" title="访问 web爬虫之识别PhantomJs识别">web爬虫之识别PhantomJs识别</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-06-15 06:54:32 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#PhantomJs"  data-hover="PhantomJs">PhantomJs </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/05/22/macfenqucode8.html" title="访问 MAC 中该磁盘不能被分区，因为文件系统验证失败错误代码8">MAC 中该磁盘不能被分区，因为文件系统验证失败错误代码8</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-05-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Mac"  data-hover="Mac">Mac </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/05/22/NSXMLParser.html" title="访问 parser:parseErrorOccurred31#parser:parseErrorOccur">parser:parseErrorOccurred31#parser:parseErrorOccur</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-05-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#Mac"  data-hover="Mac">Mac </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/03/10/squashfs.html" title="访问 关于squashfs一些收集和用法">关于squashfs一些收集和用法</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-03-10 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#squashfs"  data-hover="squashfs">squashfs </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/03/02/mianshi.html" title="访问 面试国企三轮面试过了最后一轮我...">面试国企三轮面试过了最后一轮我...</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-03-02 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#年少轻狂"  data-hover="年少轻狂">年少轻狂 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2016/01/15/wechart.html" title="访问 开源微信协议分析和机器人实现云客服">开源微信协议分析和机器人实现云客服</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2016-01-15 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#微信"  data-hover="微信">微信 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+            </div>
+	</div>
+  	</div>
+     	<div class="categorys-item">
+			 	<div class="categorys-title" id="2015">
+			2015
+		</div>
+        <div class="post-lists">
+			<div class="post-lists-body">
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2015/03/08/aloneme.html" title="访问 一个人站台一个人背影一个人debug">一个人站台一个人背影一个人debug</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2015-03-08 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#年少轻狂"  data-hover="年少轻狂">年少轻狂 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+            </div>
+	</div>
+  	</div>
+     	<div class="categorys-item">
+			 	<div class="categorys-title" id="2014">
+			2014
+		</div>
+        <div class="post-lists">
+			<div class="post-lists-body">
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2014/04/09/bananarumen.html" title="访问 BANANA PI 入门：香蕉派如何安装系统？">BANANA PI 入门：香蕉派如何安装系统？</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2014-04-09 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#香蕉派"  data-hover="香蕉派">香蕉派 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+            </div>
+	</div>
+  	</div>
+     	<div class="categorys-item">
+			 	<div class="categorys-title" id="2013">
+			2013
+		</div>
+        <div class="post-lists">
+			<div class="post-lists-body">
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/2013/06/22/alonecode.html" title="访问 我是一个码农 我是一个有社交障碍的人">我是一个码农 我是一个有社交障碍的人</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									2013-06-22 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#年少轻狂"  data-hover="年少轻狂">年少轻狂 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+        
+            </div>
+	</div>
+  	</div>
+     	<div class="categorys-item">
+			 	<div class="categorys-title" id="1970">
+			1970
+		</div>
+        <div class="post-lists">
+			<div class="post-lists-body">
+        
+    
+
+    
+    
+    
+			<div class="post-list-item">
+					<div class="post-list-item-container">
+						<div class="item-label">
+							<div class="item-title">
+								<a href="http://localhost:4000/1970/01/01/bookindex.html" title="访问 liberxue读过书|在读的书">liberxue读过书|在读的书</a>
+							</div>
+							<div class="item-meta clearfix">
+								<div class="item-meta-date">
+									1970-01-01 00:00:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/tags#书籍"  data-hover="书籍">书籍 </a>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+    
+     </div>
+	</div>
+   	</div>
+    
+
+
+
+
+
+        </div>
+        
+      </main>
+      
+    </div>
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,490 @@
+
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+  <head>
+    <meta content='微信读书协议分析|和搜索查询数据接口 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='title' />
+    <meta content='微信读书协议分析|和搜索查询数据接口 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='og:title' />
+    <title>微信读书协议分析|和搜索查询数据接口 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>微信读书协议分析|和搜索查询数据接口 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈抓包工具：Charles抓包平台：Mac 10.12.6 Beta (16G24b)微信读书 服务器 使用技术：  Re..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="微信读书协议分析|和搜索查询数据接口 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈抓包工具：Charles抓包平台：Mac 10.12.6 Beta (16G24b)微信读书 服务器 使用技术：  Re..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="微信读书协议分析|和搜索查询数据接口 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈抓包工具：Charles抓包平台：Mac 10.12.6 Beta (16G24b)微信读书 服务器 使用技术：  Re..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈抓包工具：Charles抓包平台：Mac 10.12.6 Beta (16G24b)微信读书 服务器 使用技术：  Re..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000/2017/07/13/wxread.html' property='og:url' />
+  <meta content="本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈抓包工具：Charles抓包平台：Mac 10.12.6 Beta (16G24b)微信读书 服务器 使用技术：  Re..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="" gtools_scp_screen_capture_injected="true">
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                         
+            <a href="http://localhost:4000/">首页</a>
+                             
+            <a href="http://localhost:4000/book">书籍</a>
+                             
+            <a href="http://localhost:4000/road">旅游</a>
+                             
+            <a href="http://localhost:4000/archives">归档</a>
+                             
+            <a href="http://localhost:4000/tags">标签</a>
+                             
+            <a href="http://localhost:4000/about">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form id="cb-search-btn" role="search">
+         <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+        </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="http://localhost:4000/">首页</a></li>
+                            
+                <li><a href="http://localhost:4000/book">书籍</a></li>
+                            
+                <li><a href="http://localhost:4000/road">旅游</a></li>
+                            
+                <li><a href="http://localhost:4000/archives">归档</a></li>
+                            
+                <li><a href="http://localhost:4000/tags">标签</a></li>
+                            
+                <li><a href="http://localhost:4000/about">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="post-header-thumb bg-white}">
+	<div class="post-header-thumb-op"></div>
+	<div class="post-header-thumb">
+		<div class="post-header-thumb-container">
+    <h1 class="post-title" itemprop="name headline">
+	微信读书协议分析|和搜索查询数据接口</h1>
+		 <div class="post-data">  
+	 <time datetime="2017-07-13 08:39:03" itemprop="datePublished">发布时间：2017-07-13 08:39:03</time>
+     <a href="/tags#微信读书" title="访问 微信读书" data-hover="博客分类: 微信读书">博客分类: 微信读书</a>
+    <a href="#read"> 阅读次数: comments</a> 
+			</div>
+            <div class="post-tags">
+                
+      
+      
+       
+          <a href="/tags#微信读书接口" title="访问微信读书接口" data-hover="微信读书接口">
+          微信读书接口 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#微信读书API" title="访问微信读书API" data-hover="微信读书API">
+          微信读书API <span>(1)</span>
+          
+</a>
+      
+      
+      
+     
+	</div>
+</div>
+</div></div>
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			微信读书协议分析|和搜索查询数据接口</h1>
+		<div class="post-data">
+				<time datetime="2017-07-13 08:39:03" itemprop="datePublished">2017-07-13 08:39:03</time>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+         <p class="post-tags">
+    
+      
+      
+       
+          <a href="/tags#微信读书接口" title="访问微信读书接口" data-hover="微信读书接口">
+          微信读书接口 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#微信读书API" title="访问微信读书API" data-hover="微信读书API">
+          微信读书API <span>(1)</span>
+          </a>
+      
+      
+      
+     
+</p>
+<p>本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈</p>
+
+<h2 id="抓包工具charles">抓包工具：<code class="highlighter-rouge">Charles</code></h2>
+
+<h2 id="抓包平台mac-10126-beta-16g24b">抓包平台：Mac 10.12.6 Beta (16G24b)</h2>
+
+<h2 id="微信读书-服务器-使用技术">微信读书 服务器 使用技术：</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">Resin</code></li>
+  <li>`nginx/1.8.1</li>
+</ul>
+
+<p><code class="highlighter-rouge">Resin</code>是<code class="highlighter-rouge">CAUCHO</code>公司的产品，是一个非常流行的支持<code class="highlighter-rouge">servlets</code>和<code class="highlighter-rouge">jsp</code>的引擎，速度非常快。<code class="highlighter-rouge">Resin</code>本身包含了一个支持HTTP/1.1的WEB服务器。虽然它可以显示动态内容，但是它显示静态内容的能力也非常强，速度直逼<code class="highlighter-rouge">APACHE SERVER</code>。许多站点都是使用该WEB服务器构建的。</p>
+
+<p><code class="highlighter-rouge">Resin</code>也可以和许多其他的<code class="highlighter-rouge">WEB</code>服务器一起工作，比如<code class="highlighter-rouge">Apache server</code>和<code class="highlighter-rouge">IIS</code>等。<code class="highlighter-rouge">Resin</code>支持<code class="highlighter-rouge">Servlets 3.0</code>标准和<code class="highlighter-rouge">JSP 1.2</code>标准。熟悉ASP和PHP的用户可以发现用Resin来进行JSP编程是件很容易的事情。</p>
+
+<p>Resin支持负载平衡（Load balancing），可以增加WEB站点的可靠性。方法是增加服务器的数量。比如一台SERVER的错误率是1%的话，那么支持负载平衡的两个Resin服务器就可以使错误率降到0.01%。</p>
+
+<p>Resin也是全免费的，从站点下载的就是完整版本。相对于tomcat,后者更象是一个正在研究的项目。目前resin可以支持sun的j2ee，而tomcat不能直接支持，而j2ee是基于java服务器端大系统的基础。Resin3 之后已经不在是一个简单的jsp容器，并且支持ejb,jta等企业功能。目前resin4 (2010年后已经比较稳定)性能更是优秀。并且已经支持servlet 3.0标准. pro版本是收费版本，支持负载均衡和文件缓存。普通版本独立作为web服务器性能就要差一些，可以使用apache+resin的方案借助apache的缓存功能提高性能，但负载均衡就是普通版不能比的。CAUCHO公司还为resin添加了PHP解析执行功能，能够运行php程序。但相对 php的原生版本还是有一定差距。</p>
+
+<p>Tomcat 和Sun Java结合的最好，和其他应用服务器配合使用可支持完整的j2ee标准，应用也很广泛。但是从Java 普遍存在的编码问题来看，还是Resin 解决的最好。还有从使用的角度讲，个人认为Resin比Tomcat方便，而且Resin也可以结合Jbuilder6等ide使用。Resin强调使用Xml技术。</p>
+
+<h3 id="协议如下">协议如下：</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>curl -H <span class="s1">'Host: weread.qq.com'</span> -H <span class="s1">'Origin: http://weread.qq.com'</span> -H <span class="s1">'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.25 (KHTML, like Gecko) Mobile/15A5304i MicroMessenger/6.5.10 NetType/WIFI Language/zh_CN'</span> -H <span class="s1">'Cookie: wr_avatar=http%3A%2F%2Fwx.qlogo.cn%2Fmmhead%2FrK1nsTlCD8GxAic87cBQBrQBghicm72fkbiaPCUEUwRb1yaQF8yM0eib6w%2F0; wr_logined=1; wr_name=Liberxue; wr_skey=ThoYMbm2; wr_vid=7413057; sd_cookie_crttime=1499317803091; sd_userid=41101499317803091; pgv_pvid=73599382; pgv_pvi=9667674112'</span> -H <span class="s1">'Referer: http://weread.qq.com/wrpage/book/share/226099?ref=mp&amp;code=071V44Na0KzfRt1yfQPa0kWNMa0V44NO&amp;state=226099'</span> -H <span class="s1">'Accept-Language: zh-cn'</span> -H <span class="s1">'Accept: */*'</span> --data <span class="s2">"bookId=226099"</span> --compressed <span class="s1">'http://weread.qq.com/wrpage/review/list'</span>
+</code></pre>
+</div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>curl -H <span class="s1">'Host: weread.qq.com'</span> -H <span class="s1">'Cookie: wr_avatar=http%3A%2F%2Fwx.qlogo.cn%2Fmmhead%2FrK1nsTlCD8GxAic87cBQBrQBghicm72fkbiaPCUEUwRb1yaQF8yM0eib6w%2F0; wr_logined=1; wr_name=Liberxue; wr_skey=ThoYMbm2; wr_vid=7413057; sd_cookie_crttime=1499317803091; sd_userid=41101499317803091; pgv_pvid=73599382; pgv_pvi=9667674112'</span> -H <span class="s1">'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span> -H <span class="s1">'Upgrade-Insecure-Requests: 1'</span> -H <span class="s1">'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.25 (KHTML, like Gecko) Mobile/15A5304i MicroMessenger/6.5.10 NetType/WIFI Language/zh_CN'</span> -H <span class="s1">'Accept-Language: zh-cn'</span> --compressed <span class="s1">'http://weread.qq.com/wrpage/search?ref=mp&amp;keyword=1987&amp;code=051Sdj482Sv9lP0lDt7825lf482Sdj4P&amp;state=665533'</span>
+</code></pre>
+</div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>curl -H <span class="s1">'Host: weread.qq.com'</span> -H <span class="s1">'Cookie: wr_avatar=http%3A%2F%2Fwx.qlogo.cn%2Fmmhead%2FrK1nsTlCD8GxAic87cBQBrQBghicm72fkbiaPCUEUwRb1yaQF8yM0eib6w%2F0; wr_logined=1; wr_name=Liberxue; wr_skey=ThoYMbm2; wr_vid=7413057; sd_cookie_crttime=1499317803091; sd_userid=41101499317803091; pgv_pvid=73599382; pgv_pvi=9667674112'</span> -H <span class="s1">'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span> -H <span class="s1">'Upgrade-Insecure-Requests: 1'</span> -H <span class="s1">'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.25 (KHTML, like Gecko) Mobile/15A5304i MicroMessenger/6.5.10 NetType/WIFI Language/zh_CN'</span> -H <span class="s1">'Accept-Language: zh-cn'</span> --compressed <span class="s1">'http://weread.qq.com/wrpage/search?ref=mp&amp;keyword=time&amp;code=051Sdj482Sv9lP0lDt7825lf482Sdj4P&amp;state=665533'</span>
+</code></pre>
+</div>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>curl -H <span class="s1">'Host: weread.qq.com'</span> -H <span class="s1">'Cookie: wr_avatar=http%3A%2F%2Fwx.qlogo.cn%2Fmmhead%2FrK1nsTlCD8GxAic87cBQBrQBghicm72fkbiaPCUEUwRb1yaQF8yM0eib6w%2F0; wr_logined=1; wr_name=Liberxue; wr_skey=ThoYMbm2; wr_vid=7413057; sd_cookie_crttime=1499317803091; sd_userid=41101499317803091; pgv_pvid=73599382; pgv_pvi=9667674112'</span> -H <span class="s1">'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span> -H <span class="s1">'Upgrade-Insecure-Requests: 1'</span> -H <span class="s1">'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.25 (KHTML, like Gecko) Mobile/15A5304i MicroMessenger/6.5.10 NetType/WIFI Language/zh_CN'</span> -H <span class="s1">'Accept-Language: zh-cn'</span> --compressed <span class="s1">'http://weread.qq.com/wrpage/search?ref=mp&amp;keyword=毛姆'</span>
+
+</code></pre>
+</div>
+
+<h4 id="微信读书ios版本搜索协议">微信读书iOS版本搜索协议：</h4>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>curl -H <span class="s1">'Host: weread.qq.com'</span> -H <span class="s1">'Cookie: wr_avatar=http%3A%2F%2Fwx.qlogo.cn%2Fmmhead%2FrK1nsTlCD8GxAic87cBQBrQBghicm72fkbiaPCUEUwRb1yaQF8yM0eib6w%2F0; wr_logined=1; wr_name=Liberxue; wr_skey=ThoYMbm2; wr_vid=7413057; sd_cookie_crttime=1499317803091; sd_userid=41101499317803091; pgv_pvid=73599382; pgv_pvi=9667674112'</span> -H <span class="s1">'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span> -H <span class="s1">'Upgrade-Insecure-Requests: 1'</span> -H <span class="s1">'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.25 (KHTML, like Gecko) Mobile/15A5304i MicroMessenger/6.5.10 NetType/WIFI Language/zh_CN'</span> -H <span class="s1">'Accept-Language: zh-cn'</span> --compressed <span class="s1">'http://weread.qq.com/wrpage/search?ref=mp&amp;keyword=time&amp;code=051Sdj482Sv9lP0lDt7825lf482Sdj4P&amp;state=665533'</span>
+
+</code></pre>
+</div>
+<h4 id="微信读书主页协议-不完整回头再研究">微信读书主页协议 不完整回头再研究</h4>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>https://i.weread.qq.com/feature?
+
+<span class="o">{</span><span class="s2">"synckey"</span>:2499788,<span class="s2">"feature"</span>:<span class="o">{</span><span class="s2">"DisableNetworkDiagnosis"</span>:1,<span class="s2">"IAPCancelTime"</span>:13000,<span class="s2">"disableAutoPlayAudio"</span>:1,<span class="s2">"exchangeDirectly"</span>:1,<span class="s2">"inviteFromExchangeView"</span>:1,<span class="s2">"mustShareSuccBeforeExchange"</span>:0,<span class="s2">"notUseCertificate"</span>:1,<span class="s2">"shareBeforeExchange"</span>:0,<span class="s2">"showAppStoreRecomment"</span>:0,<span class="s2">"winwinGiftFromBookDetail"</span>:1,<span class="s2">"winwinGiftFromReading"</span>:1,<span class="s2">"winwinGiftMaxReceive"</span>:2,<span class="s2">"showArticle"</span>:0,<span class="s2">"showExchangeRuleDetail"</span>:1<span class="o">}}</span>
+</code></pre>
+</div>
+
+		<p class="post-info">
+			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:2017-07-13 08:39:03</p>
+	</div>
+</article>
+
+<!-- <div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+					<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="induction.html">归纳的随想</a></div>
+						<div class="item-meta clearfix">
+														<div class="item-meta-ico bg-ico-image" style="background: url('../usr/themes/pinghsu/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+	                        							<div class="item-meta-cat"><a href="../category/thoughts/index.html">Thoughts</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+	</div>
+</div> -->
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!--liberxueconnnet-menu-->
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<!--liberxueconnnet-menu-->
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script >lang=hljs.initHighlightingOnLoad();</script>   
+ </body>
+</html>
