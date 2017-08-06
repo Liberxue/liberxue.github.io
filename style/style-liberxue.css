@@ -166,6 +166,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .post-list-item-container{position:relative;overflow:hidden;width:100%;padding:0;border-radius:.6px;background-color:#fff;-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.04);    box-shadow: 2px 2px 2px 2px rgba(183, 184, 185, 0.15);
 border-radius: .6rem;}
 .post-list-item-container:hover{-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.07);box-shadow:0 15px 30px rgba(0,0,0,.07);border-radius: .6rem;}
+.liberxue-title{background: rgba(227, 234, 241, 0.3);font-weight: 200;padding: 4px 13px;}
 .post-list-item-container .item-thumb{position:relative;display:inherit;min-height:250px;-webkit-transition:-webkit-transform 500ms ease,filter 500ms ease;-moz-transition:-moz-transform 500ms ease,filter 500ms ease;transition:transform 500ms ease,filter 500ms ease;background-position:50% 50%;background-size:cover;}
 .post-list-item-container .item-desc{position:absolute;top:0;overflow:hidden;width:100%;height:100%;padding:40px 28px; -webkit-transition: all .2s linear;transition: all .2s linear;}
 .post-list-item-container .item-desc p{font-size:14px;margin:0;padding:0;word-break:break-all;opacity:0;color:#fff;}
@@ -176,6 +177,9 @@ border-radius: .6rem;}
 .post-list-item-container .item-slant.reverse-slant{-webkit-transform:rotate(-10deg) translate(10px,-10px);-ms-transform:rotate(-10deg) translate(10px,-10px);transform:rotate(-10deg) translate(10px,-10px);opacity:.7;background-color:#f68e5f;-webkit-box-shadow:none;box-shadow:none;}
 .post-list-item-container .item-label{position:relative;height:130px;padding:25px 20px 40px;background-color:#fff;}
 .post-list-item-container .item-label .item-title a{font-size:15px;word-break:break-all;color:#313131;line-height: 30px;overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2; }
+.post-list-item-container .item-label .item-title a:hover{
+    font-size:15px;word-break:break-all;color:#eb5055;line-height: 30px;overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2;
+}
 .post-list-item-container .item-label .item-meta{position:absolute;right:0;bottom:0;width:100%;padding: 0 22px 15px;text-align:right;}
 .post-list-item-container .item-label .item-meta .item-meta-cat a{font-size:13px;position:relative;float:right;margin-right:10px;padding:10px 0;text-align:right;text-transform:none;color:#5f5f5f;}
 .post-list-item-container .item-label .item-meta .item-meta-date{font-size:12px;position:relative;float:left;padding-top:9px;padding-left:9px;text-align:right;text-transform:none;color:#f1f1f1;}
@@ -348,7 +352,7 @@ pre code::after {font-size: 1rem;color: #BFBFBF;position: absolute;top: 5px;righ
    #footer
    ========================================================================== */
 .footer{position:relative;z-index:1;margin-top:0;padding-bottom:50px;background-color:#fff;}
-.footer-social{border-bottom:1px solid rgba(184,197,214,.2);}
+.footer-social{border-bottom:1px solid rgba(184,197,214,.2);    box-shadow: 0 -2px 8px 0 rgba(239, 241, 243, 0.59);}
 .footer-social .footer-container{max-width:940px;margin:0 auto;}
 .footer-social .social-list{padding:20px;text-align:center;}
 .footer-social .social-list a{font-size:13px;padding:0 25px;text-decoration:none;color:#5f5f5f;}
