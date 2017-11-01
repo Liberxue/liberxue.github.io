@@ -4,11 +4,11 @@
 ``Jekyll Themes``
 ----------
   
-## Jekyll轻量级极简博客
+### Jekyll轻量级极简博客
 
-### 第一步是点击[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
-### 第二步是修改你的域名CNAME
-### 第三步是修改_config.yml URL为您的域名
+#### 第一步是点击[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
+#### 第二步是修改你的域名CNAME
+#### 第三步是修改_config.yml URL为您的域名
 
 - [x] 自动生成标签
 - [x] 自动生成json搜索
