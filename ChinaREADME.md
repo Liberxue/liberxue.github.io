@@ -7,7 +7,6 @@
 ### Jekyll轻量级极简博客
 
 #### 第一步是点击[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
-#### 第二步是修改你的域名CNAME
 ##### 第二步: 修改_config.yml 中的url 为您的域名
 #### OK 好了  就这么简单  
 #### 我不要任何版权也不需要您在捐款，帮忙star下 一个🌟 谢谢 😄
