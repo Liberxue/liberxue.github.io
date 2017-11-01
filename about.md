@@ -2,6 +2,7 @@
 layout: blog
 title: 关于LiberXue
 description: "关于LiberXue博客角落自述"
+data: 2017-08-05 09:19:11
 tags: 
 - LiberXue
 - 简述
@@ -17,7 +18,9 @@ redirect_from:
  
 又换了个博客主题 这次终于看见不那么难受了
  
-博客使用Jekyll搭建托管在GitHub目前使用主题后期我修改完善会开源
+博客使用Jekyll搭建托管在GitHub目前使用主题后期[已开源](https://github.com/Liberxue/liberxue.github.io)
+ 
+<iframe src="http://ghbtns.com/github-btn.html?user=liberxue&repo=liberxue.github.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
  
 
 博客图片使用七牛云加速
@@ -52,8 +55,15 @@ redirect_from:
 ### 使用语言
 
 ``c# ``|``lua``| ``c++``|
- ``swift`` |``JavaScript`` |``PHP``|
  
+ ``swift`` |``JavaScript`` |``PHP``|
+  
+  ``Python`` |``Java`` |``GO``|
+  ``perl``|``shell``|
+ 
+
+ 目前主攻``GO``
+  
 ### 个人爱好
 
  热衷于``路由器``研究和``网络安全``...
@@ -70,9 +80,9 @@ redirect_from:
  
 不喜欢被打扰，也不习惯打扰别人
  
-「所以我不用评论」，社交软件基本很少用，如果您对我的blog有疑问，请发送``Email``联系我。
+「所以我不用评论」，社交软件基本很少用，如果您对我的blog有疑问，请发送[Email](mailto:liberxue@gmail.com) 联系我。
  
-这个世界太热闹了，也言语太“自由” 需要`面壁者`也需要`独立思考`和`独立学习生活者`
+这个世界太热闹了，也言语太“自由” 需要`面壁者`也需要`独立思考`和`独立学习生活者`和`独立解决问题者`
  
  
 # 第一篇博客
@@ -83,6 +93,44 @@ redirect_from:
 ## 主要谈三个方面
  
 ### 自己的开发经历
+
+#### 2010-2014
+曾在X国企电信开发400电话呼叫管理系统
+* 使用技术：
+- c# 
+- asp.net 
+- visual-studio 
+- winform+seversql
+* 项目经验    
+
+- 400电话呼叫管理系统,支撑用户5000+并发量 
+- 支持移动端呼叫来电显示
+* 岗位职责
+- 负责公司网站美工前端seo，机房维护
+- 负责系统后台及前端页面开发；
+- 参与项目需求讨论、分析、评估，能根据需求承担项目功能设计开发工作，并按时保质完成* 开发任务；
+- 快速响应产品需求变化，能够进行模块功能技术方案优化；
+- 分析并协调解决开发过程中遇到的各种问题，能够快速响应产品需求变化；
+- 配合leader进行计划排期、项目设计、代码审核等工作。
+
+2014年9月10号离职意淫创业
+>创业产品一：净化网络路由器（去视频广告系统和NAS(私有云)路由器整合）。
+使用系统：Freebsd
+使用技术：c++  perl PHP ruby  
+创业目的：DNS双向加速缓存,cc攻击流量分析,   去视频广告系统和NAS(私有云)。
+
+> 创业产品二：使用ros squid 秒开和自己开发的认证Wi-Fi系统 做公共室外Wi-Fi广告认证 wididog openwrt远程控制营销系统一体集成的云端控制系统
+  wifidog/ros微信连wifi/i认证营销系统 是路由器云端控制系统，轻松实现无线登陆手机认证，微信认证，一键上网，广告控制系统，微信连wifi,营销系统一体集成的云端控制系统。
+       云端源码以PHP加MYSQL非常成熟的技术开发，开发完成各基础的功能， 用户可根据自身的运营需求，简单修改PHP页面或程序来实现不同的运营需求。
+ 
+ 
+#### 2014-10月-2016年12月份
+创业失败 上班
+ 
+
+#### 2017-3月-2017年6月份
+北京X智慧教育公司 负责全栈开发
+公司不发工资 ，开发团队解散！
 
 喜欢专研计算机软硬件，玩过不少ARM开发版，独立开发过路由器和路由认证系统，喜欢用软件和脚本解决生活中重复性问题。业余曾在乌云和360补天提交过不少漏洞和bug，2013年百度SEO搜索引擎营销学院学习过SEO优化，能够使用photoshop、CorelDRAW、IIIustator、CAD和3DMAX,独立编译开发过webkit浏览器，2017年独立反编译分析"WannaCry2.0"病毒原理。
  
@@ -98,7 +146,7 @@ redirect_from:
 
 该博客创建于 2010 年 3 月，主要为个人的网络日志，在线记录生活、工作、情感和游玩的事儿，分享互联网动态和社会百态。2015 年 9 月 1 日起开始使用  Jekyll 主题，该主题支持 iPhone 和 iPad 等不同屏幕分辨率，响应式设计，但不支持 IE 浏览器
 
-> 生活，除了工作应该还有很多值的我们去记录。读书时代喜欢写诗，大学时代喜欢写博／小说，现在的我喜欢记录和分享。都说眼睛是心灵的窗口，而文字，则是心灵的声音，透过这些文字，或许你能了解我，更多的更多。
+
 
 # 权利声明
  
@@ -122,13 +170,14 @@ ID|项 目 名 称| 开 发 语 言| 功 能 简 述| 框架| 是否上线|
 2|ros路由器Api认证开发|PHP&mysql|多vlan+用户/代理商/总后台|thinkphp|是
 3|智能开关餐饮系统|PHP&c#&mysql|winfrom+web微信选座点餐数据交互|无|是
 4|oa即时通讯办公系统|PHP&mysql|workerman／socket／json／APIcloud|无|是
-5|微信云客服|vc++&JavaScript&c#|微信自动回复.红包.语音.自动加好友等|无|是
-6|webkit/cef浏览器|cef&webkit&c#|类似腾讯视频客户端自定义flash右键|无|是
-7|vcdlocker硬盘锁|vc++&nasm|可以绕过腾讯管家360杀毒加密硬盘|无|是
-8|c/s客户端自动更新|c#|c#客户端自动更新程序+服务端生成程序|无|是
+5|微信云客服|vc++&JavaScript&c#|微信自动回复.红包.语音.自动加好友等|无|已开源
+6|webkit/cef浏览器|cef&webkit&c#|类似腾讯视频客户端自定义flash右键|无|已开源
+7|vcdlocker硬盘锁|vc++&nasm|可以绕过腾讯管家360杀毒加密硬盘|无|已开源
+8|c/s客户端自动更新|c#|c#客户端自动更新程序+服务端生成程序|无|已开源
 9|安装打包程序|c#|自定义安装包，打包程序源代码|无|是
-10|c#交互lua|c#&adb&lua|通达oa打卡支付ar自动抢五福|无|是
+10|c#交互lua|c#&adb&lua|通达oa打卡支付ar自动抢五福|无|已开源
 11|freebsd路由器|vc perl PHP ruby|dns双向加速缓存 cc流量分析|freebsd|没有
+11|Jekyll themes|html5 css3 moonjs ruby json|Jekyll|无|已开源
 
 
 
@@ -138,7 +187,7 @@ ID|项 目 名 称| 开 发 语 言| 功 能 简 述| 框架| 是否上线|
  
 你可以通过以下几种方式联系到我。
 
-* [提交Issues](https://github.com/liberxue)
+* [提交Issues](https://github.com/Liberxue/liberxue.github.io/issues)
  
 * [发邮件](mailto:liberxue@gmail.com)
  

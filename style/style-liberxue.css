@@ -163,9 +163,9 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .post-lists{position:relative;display:block;overflow:hidden;}
 .post-lists-body{display:block;}
 .post-list-item{float:left;width:33.3333%;height:auto;padding:18px;align-items:center;}
-.post-list-item-container{position:relative;overflow:hidden;width:100%;padding:0;border-radius:.6px;background-color:#fff;-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.04);    box-shadow: 2px 2px 2px 2px rgba(183, 184, 185, 0.15);
+.post-list-item-container{position:relative;overflow:hidden;width:100%;padding:0;border-radius:.6px;background-color:#fff;    box-shadow: 2px 2px 4px rgba(159,202,255,.5);
 border-radius: .6rem;}
-.post-list-item-container:hover{-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.07);box-shadow:0 15px 30px rgba(0,0,0,.07);border-radius: .6rem;}
+.post-list-item-container:hover{-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.07);box-shadow: 2px 2px 4px rgba(159,202,255,.5);border-radius: .6rem;}
 .liberxue-title{background: rgba(227, 234, 241, 0.3);font-weight: 200;padding: 4px 13px;}
 .post-list-item-container .item-thumb{position:relative;display:inherit;min-height:250px;-webkit-transition:-webkit-transform 500ms ease,filter 500ms ease;-moz-transition:-moz-transform 500ms ease,filter 500ms ease;transition:transform 500ms ease,filter 500ms ease;background-position:50% 50%;background-size:cover;}
 .post-list-item-container .item-desc{position:absolute;top:0;overflow:hidden;width:100%;height:100%;padding:40px 28px; -webkit-transition: all .2s linear;transition: all .2s linear;}
