@@ -10,13 +10,13 @@
 ### 第二步是修改你的域名CNAME
 ### 第三步是修改_config.yml URL为您的域名
 
-- [ ] 自动生成标签
-- [ ] 自动生成json搜索
-- [ ] 自适应模板
-- [ ] 自动生成feed.xml
-- [ ] 自动生成分页
-- [ ] 修改_config.yml 的links 为您的菜单
-- [ ] 修改_config.yml  的paginate 为您的按照多少页分页
+- [x] 自动生成标签
+- [x] 自动生成json搜索
+- [x] 自适应模板
+- [x] 自动生成feed.xml
+- [x] 自动生成分页
+- [x] 修改_config.yml 的links 为您的菜单
+- [x] 修改_config.yml  的paginate 为您的按照多少页分页
 
 ![uiliberxue](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/ui.jpg) 
  
