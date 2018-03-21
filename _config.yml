@@ -14,7 +14,7 @@ links:
   - name:         首页
     url:          /
     external:     false
-  - name:         书籍
+  - name:         code
     url:          /book
     external:     false
   - name:         旅游
