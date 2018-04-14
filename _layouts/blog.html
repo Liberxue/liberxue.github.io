@@ -4,16 +4,16 @@
   <head>
     <meta content='{{ page.title }} - {{ site.title }}' name='title' />
     <meta content='{{ page.title }} - {{ site.title }}' name='og:title' />
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <title>{{ page.title }}{{ site.title }}</title>
     {% include head.html %}
   </head>
 <body class="" gtools_scp_screen_capture_injected="true">
 <header id="header" class="header bg-white">
     <div class="navbar-container">
-      <a href="/?liberxue" title="访问 {{site.title }}" class="navbar-logo"> <img src="{{ site.url }}/style/images/logo-liberxue.png" alt="{{ site.title }}"> </a>
+      <a href="/?outvanity" title="访问 {{site.title }}" class="navbar-logo"> <img src="http://outvanity-1252009748.file.myqcloud.com/logo-outvanity.png" alt="{{ site.title }}"> </a>
         <div class="navbar-menu">
             {% for link in site.links %}             
-            <a href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">{{ link.name }}</a>
+            <a href="{% unless link.external %}{{ siteurl.url }}{% endunless %}{{ link.url }}">{{ link.name }}</a>
                 {% endfor %}
           </div>
         <div class="navbar-search" onclick="">
@@ -28,7 +28,7 @@
             <span class="icon-menu cross"><span class="middle"></span></span>
             <ul>
                {% for link in site.links %}           
-                <li><a href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">{{ link.name }}</a></li>
+                <li><a href="{% unless link.external %}{{ siteurl.url }}{% endunless %}{{ link.url }}">{{ link.name }}</a></li>
                  {% endfor %}
             </ul>
         </div>
@@ -43,7 +43,7 @@
 		 <div class="post-data">  
 	 <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">发布时间：{{ page.date | date: "%F %H:%M:%S"}}</time>
      <a href="/tags#{{ page.category }}" title="访问 {{ page.category }}" data-hover="博客分类: {{ page.category }}">博客分类: {{ page.category }}</a>
-    <a href="#read"> 阅读次数: comments</a> 
+  <!--  <a href="#read"> 阅读次数: comments</a> -->
 			</div>
             <div class="post-tags">
                 {% unless page.tags == empty %}
@@ -98,34 +98,17 @@
     {% endunless %} 
 </p>
 {{ content }}
-		<p class="post-info">
-			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:{{ page.date | date: "%F %H:%M:%S"}}</p>
+		
 	</div>
 </article>
 
-<!-- <div class="related-post-lists">
-	<div class="post-lists">
-		<div class="post-lists-body">
-					<div class="post-list-item">
-				<div class="post-list-item-container">
-					<div class="item-label">
-						<div class="item-title"><a href="induction.html">归纳的随想</a></div>
-						<div class="item-meta clearfix">
-														<div class="item-meta-ico bg-ico-image" style="background: url('../usr/themes/pinghsu/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
-	                        							<div class="item-meta-cat"><a href="../category/thoughts/index.html">Thoughts</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-				</div>
-	</div>
-</div> -->
+
 {% include foot.html %}
-<!--liberxueconnnet-menu-->
+<!--outvanityconnnet-menu-->
 <div id="directory-content" class="directory-content">
     <div id="directory"></div>
 </div>
-<!--liberxueconnnet-menu-->
+<!--outvanityconnnet-menu-->
 <script>
 var postDirectoryBuild = function() {
     var postChildren = function children(childNodes, reg) {
