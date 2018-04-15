@@ -21,8 +21,17 @@
                         <!--<p>Theme is <a href="http://www.outvanity.com/2017/08/03/Jekyllthemes.html" title="访问 Jekyll outvanity主题"  data-hover="Jekyll outvanity"target="_blank">Jekyll outvanity</a> by <a href="http://www.outvanity.com/about" target="_blank">outvanity</a></p>-->
                         <!--<p>Powered by <a href="{{ siteurl.url }}/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>-->
                         <p>&copy; 2018 outvanity blog</p>
-                        	<p><a href="/feed.xml"  title="outvanity blog RSS" data-hover="outvanity blog RSS">outvanity Blog RSS</a></p>
-                        <p>总计文章：{{paginator.total_posts}}篇</p>
+                        	<p><a href="/feed.xml"  title="outvanity Blog RSS" data-hover="outvanity Blog RSS">outvanity Blog RSS</a></p>
+                      {% for post in paginator.posts  limit:10%}
+                      
+                            {% if{paginator.total_posts}==null%}
+         				 <p>总计文章：0篇</p>
+         				    {% else if {paginator.total_posts}!=0% %}
+         				 <p>总计文章：{{paginator.total_posts}}篇</p>
+                      
+                         {% endif %}
+                     {% endfor %}
+                     
                       <!--<p>本blog已开源点击Fork</p><iframe src="http://ghbtns.com/github-btn.html?user=outvanity&repo=outvanity.github.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>-->
                     </div>
                 </div>
@@ -42,11 +51,12 @@
   {% for post in site.posts limit:14 %}        
       {% if post.book %}
  <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
-	 {% endif %}
-       {% if post.code %}
+
+
+       {%else if post.code %}
  <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
-      {% endif %}
-       {% if post.travel %}
+ 
+       {% else if post.travel %}
  <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
       {% endif %}
     {% endfor %}

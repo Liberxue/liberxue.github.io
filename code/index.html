@@ -21,7 +21,7 @@ description: "码码码"
 					<div class="item-label">
 						<div class="item-title"><a href="{{ posts.url }}">{{ posts.title }}</a></div>
 						<div class="item-meta clearfix">
-						<div class="item-meta-ico bg-ico-book" style="background: url('../style/images/bg-code.png') no-repeat;background-size: 40px auto;"></div>
+						<div class="item-meta-ico bg-code" style="background: url('http://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-code.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
              <div class="item-meta-cat">
 				 <a href="category/thoughts/index.html" title="访问 {{  posts.category }}"  data-hover="{{ posts.category }}">{{ posts.category }}</a>
 				 <a href="category/thoughts/index.html" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M:%S "}}">{{ posts.date | date: "%F %H:%M:%S "}}</a></div>
@@ -33,4 +33,9 @@ description: "码码码"
        {% endfor %}
 	</div>
 	</div>
-  {% include pagination.html %}
+	  {% for posts in site.posts %}
+	  	   {% if posts.code%}
+ 	{% include pagination.html %}
+ 
+ {% endif %}
+  {% endfor %}

@@ -15,15 +15,28 @@
 					</a>
 					<div class="item-slant reverse-slant  bg-{{ posts.background }}"></div>
 					<div class="item-slant">	<div class="outvanity-title">
-				原创
+		{% for posts in site.posts %}
+	  	   		{% if posts.code%}代码{% else if posts.book%}书籍{% else if posts.travel%}旅行{% endif %}
+			 {% endfor %}
 				</div></div>
-					<div class="item-label">
+					<div class="item-label" >
 						<div class="item-title"><a href="{{ posts.url }}" title="访问 {{ posts.title }}">{{ posts.title }}</a></div>
 						<div class="item-meta clearfix">
-						<div class="item-meta-ico bg-ico-book" style="background: url('style/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+							  {% for posts in site.posts %}
+	  	   {% if posts.code%}
+		
+						<div class="item-meta-ico bg-travel" style="background: url('http://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-code.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
+                {% else if posts.book%}
+		
+						<div class="item-meta-ico bg-travel" style="background: url('http://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-book.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
+               {% else if posts.travel%}
+		
+						<div class="item-meta-ico bg-travel" style="background: url('http://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-travel.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
+			 {% endif %}
+       {% endfor %}
              <div class="item-meta-cat">
 				 <a href="/tags#{{ posts.category }}" title="访问 {{ posts.category }}" data-hover="{{ posts.category }}">{{ posts.category }}</a>
-				 <a href="/archives#{{ posts.date | date: "%Y"}}" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M"}}">{{ posts.date | date: "%F %H:%M"}}</a></div>
+				 <a href="/history#{{ posts.date | date: "%Y"}}" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M"}}">{{ posts.date | date: "%F %H:%M"}}</a></div>
 						</div>
 					</div>
 				</div>

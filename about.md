@@ -17,6 +17,6 @@ tags:
 
 * [Github](https://github.com/outvanity)
 
-* [发邮件](mailto:outvanity@gmail.com)
+* [发邮件](mailto:z909920082@gmail.com)
 
 * [Twitter](https://twitter.com/outvanity).
