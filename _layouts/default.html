@@ -9,10 +9,11 @@
     <title>{{ site.title }}</title>
     {% include head.html %}
   </head>
+ 
 <body class="bg-grey" gtools_scp_screen_capture_injected="true"><div id="MathJax_Message" style="display: none;"></div>
 <header id="header" class="header bg-white">
     <div class="navbar-container">
-      <a href="/?outvanity" title="访问 {{  site.title }}" class="navbar-logo"> <img src="http://outvanity-1252009748.file.myqcloud.com/logo-outvanity.png" alt="{{ site.title }}"> </a>
+      <a href="/?outvanity" title="访问 {{  site.title }}" class="navbar-logo"> <img src="https://outvanity-1252009748.file.myqcloud.com/logo-outvanity.png" alt="{{ site.title }}"> </a>
         <div class="navbar-menu">
            {% for link in site.links %}             
             <a href="{{ link.url }}?outvanity"  title="访问 {{  link.name }}" data-hover="{{link.name}}">{{ link.name }}</a>
@@ -48,7 +49,7 @@
             </h1>
             {% if is_post and site.share %}
               <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
               <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-action="like"></div>
             {% endif %}
           </div>

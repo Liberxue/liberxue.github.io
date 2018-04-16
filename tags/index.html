@@ -1,8 +1,7 @@
 ---
-title: 全部标签
-description: "标签分类的博文"
+layout: default
 ---
-<div class="main-content archive-page clearfix">
+<div class="main-content history-page clearfix">
 	<h3 class="post-title" itemprop="name headline">标签分类</h3>
 											 <div class="post-data">
 			 						  <div class="post-tags">
@@ -17,7 +16,7 @@ description: "标签分类的博文"
 		</div>	
 	</div>		
 	</div>	
-<div class="main-content archive-page" >
+<div class="main-content history-page" >
 {% for item in (0..site.tags.size) %}{% unless forloop.last %}
 	{% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
      <div id="{{ this_word }}" class="post-lists" id="{{ this_word }}">

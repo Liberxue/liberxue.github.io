@@ -1,5 +1,5 @@
 ---
-
+layout: catalog
 title: 关于outvanity
 description: "关于outvanity博客"
 data: 2017-08-05 09:19:11

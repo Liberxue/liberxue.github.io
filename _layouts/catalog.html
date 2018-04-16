@@ -38,14 +38,13 @@
 	<div class="post-header-thumb-op"></div>
 	<div class="post-header-thumb">
 		<div class="post-header-thumb-container">
-    <h1 class="post-title" itemprop="name headline">
-	{{ page.title }}</h1>
-		<div class="post-data">  
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+		<!--<div class="post-data">  
 	 <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">发布时间：{{ page.date | date: "%F %H:%M:%S"}}</time>
      <a href="/tags#{{ page.category }}" title="访问 {{ page.category }}" data-hover="博客分类: {{ page.category }}">博客分类: {{ page.category }}</a>
-  <!--  <a href="#read"> 阅读次数: comments</a> -->
-		</div>
-            <div class="post-tags">
+     <a href="#read"> 阅读次数: comments</a> 
+	</div>-->
+            <!--<div class="post-tags">
                 {% unless page.tags == empty %}
       {% assign tags_list = page.tags %}
       {% if tags_list.first[0] == null %}
@@ -65,7 +64,7 @@
       {% endif %}
       {% assign tags_list = nil %}
     {% endunless %} 
-	</div>
+	</div>-->
 </div>
 </div></div>
 <article class="main-content post-page" itemscope itemtype="https://schema.org/Article">
