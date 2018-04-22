@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform"/>
 	  <meta http-equiv="Cache-Control" content="no-siteapp"/>  
-    <title>首页-{{ site.title }}</title>
+    <title>标签-{{ site.title }}</title>
     {% include head.html %}
   </head>
  
@@ -27,9 +27,9 @@
                 </span>
             </form>
         </div>
-        <div class="navbar-mobile-menu" onclick="">
-            <span class="icon-menu cross"><span class="middle"></span></span>
-            <ul>
+        <div class="navbar-mobile-menu"  onclick="" >
+            <span class="icon-menu cross"   onclick=""><span class="middle"></span></span>
+            <ul  onclick="">
                {% for link in site.links %}           
                 <li><a href="{{ link.url }}?outvanity" title="访问 {{  link.name }}" data-hover="{{link.name}}">{{ link.name }}</a></li>
                  {% endfor %}

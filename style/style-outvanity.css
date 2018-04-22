@@ -166,7 +166,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .post-list-item-container{position:relative;overflow:hidden;width:100%;padding:0;border-radius:.6px;background-color:#fff;box-shadow: 2px 2px 10px rgba(159,202,255,.5);border-radius: .6rem;}
 .post-list-item-container:hover{-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.07);box-shadow: 2px 2px 4px rgba(159,202,255,.5);border-radius: .6rem;}
 .outvanity-title{background: rgba(227, 234, 241, 0.3);font-weight: 200;padding: 4px 13px;}
-.post-list-item-container .item-thumb{position:relative;display:inherit;min-height:250px;-webkit-transition:-webkit-transform 500ms ease,filter 500ms ease;-moz-transition:-moz-transform 500ms ease,filter 500ms ease;transition:transform 500ms ease,filter 500ms ease;background-position:50% 50%;background-size:cover;}
+.post-list-item-container .item-thumb{position:relative;display:inherit;min-height:260px;-webkit-transition:-webkit-transform 500ms ease,filter 500ms ease;-moz-transition:-moz-transform 500ms ease,filter 500ms ease;transition:transform 500ms ease,filter 500ms ease;background-position:50% 50%;background-size:cover;}
 .post-list-item-container .item-desc{position:absolute;top:0;overflow:hidden;width:100%;height:100%;padding:40px 28px; -webkit-transition: all .2s linear;transition: all .2s linear;}
 .post-list-item-container .item-desc p{font-size:14px;margin:0;padding:0;word-break:break-all;opacity:0;color:#fff;}
 .post-list-item-container:hover .item-thumb{-webkit-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1);-webkit-filter:blur(3px);-moz-filter:blur(3px);filter:blur(3px);box-shadow: 0 15px 30px  rgba(69, 81, 93, 0.3);}
@@ -233,7 +233,7 @@ pre code::after {font-size: 1rem;color: #BFBFBF;position: absolute;top: 5px;righ
 .post-page .post-content .post-tags{display:none;}
 .post-title{font-size:21px;}
 .post-data,.post-data a{font-size:13px;color:#5f5f5f;margin: 7px 15px 0 0;}
-.post-tags{margin:0;padding:5px 0 15px;border-bottom: 1px solid #e0e0e0;}
+.post-tags{margin:0;padding:5px 5px 15px;border-bottom: 1px solid #e0e0e0;}
 .post-tags a{font-size:13px;font-weight:600;display:inline-block;margin: 10px 8px 0 0;padding:0 15px;-webkit-transition-duration:400ms;transition-duration:400ms;text-decoration:none!important;letter-spacing:0;}
 .post-tags a:nth-child(1n){color:#fff;border:1px solid #6fa3ef;border-radius:15px;background:#6fa3ef;}
 .post-tags a:nth-child(2n){color:#fff;border:1px solid #ff9800;border-radius:15px;background:#ff9800;}

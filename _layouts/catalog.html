@@ -2,15 +2,15 @@
 <!DOCTYPE>
 <html lang="zh-cn" data-scribe-reduced-action-queue="true">
   <head>
-    <meta content='{{ page.title }} - {{ site.title }}' name='title' />
-    <meta content='{{ page.title }} - {{ site.title }}' name='og:title' />
-    <title>{{ page.title }}{{ site.title }}</title>
+    <meta content='{{ page.title }}-{{ site.title }}' name='title' />
+    <meta content='{{ page.title }}-{{ site.title }}' name='og:title' />
+    <title>{{ page.title }}-{{ site.title }}</title>
     {% include head.html %}
   </head>
 <body class="" gtools_scp_screen_capture_injected="true">
 <header id="header" class="header bg-white">
     <div class="navbar-container">
-      <a href="/?outvanity" title="访问 {{site.title }}" class="navbar-logo"> <img src="https://outvanity-1252009748.file.myqcloud.com/logo-outvanity.png" alt="{{ site.title }}"> </a>
+      <a href="/?outvanity" title="访问 {{site.title }}" class="navbar-logo"> <img src="https://outvanity-1252009748.file.myqcloud.com/logo/logo-outvanity.png" alt="{{ site.title }}"> </a>
         <div class="navbar-menu">
             {% for link in site.links %}             
             <a href="{% unless link.external %}{{ siteurl.url }}{% endunless %}{{ link.url }}">{{ link.name }}</a>

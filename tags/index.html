@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: tags
 ---
+
 <div class="main-content history-page clearfix">
-	<h3 class="post-title" itemprop="name headline">标签分类</h3>
+	<h3 class="post-title" itemprop="name headline">&nbsp;&nbsp;标签</h3>
 											 <div class="post-data">
 			 						  <div class="post-tags">
   {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}

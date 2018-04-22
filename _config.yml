@@ -18,14 +18,14 @@
 
 host: 0.0.0.0
 port:  4000
-siteurl: https://spactimes.com  #改为你自己的域名使用https确认加入https
-title: "outvanity Blog"
+siteurl: https://spactimes.com
+title: "Outvanity Blog"
 description: "侃侃理想、谈谈人生、敲敲代码。"
 url: https://spactimes.com # 域名
 # signoff: "outvanity" # Your name
 # facebook_appid: #outvanity
 # google_analytics: UA-101222464-1
-share: true
+share: true 
 detach: false
 # 分页
 
@@ -46,12 +46,12 @@ links:
     external:     false
   - name:         代码
     url:          /code
-    external:     false
+    external:     false 
   - name:         书籍
     url:          /book
     external:     false
-  - name:         旅行
-    url:          /travel
+  - name:         杂言
+    url:          /miscellaneous
     external:     false
   - name:         历史
     url:          /history
@@ -68,7 +68,7 @@ links:
 permalink: /:year/:month/:day/:title.html
 defaults:
   - values:
-      layout: "blog"   #默认的为_post,主页default，其他目录catalog
+      layout: "blog"
 
 
 
