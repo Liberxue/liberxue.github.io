@@ -147,11 +147,11 @@ var postDirectoryBuild = function() {
                 if (num > lastNum) {
                     levelArr.push(1);
                     lastRevNum += 1;
-                } else if (num === lastRevNum ||
+                } elsif (num === lastRevNum ||
                     num > lastRevNum && num <= lastNum) {
                     levelArr.push(0);
                     lastRevNum = lastRevNum;
-                } else if (num < lastRevNum) {
+                } elsif (num < lastRevNum) {
                     levelArr.push(num - lastRevNum);
                     lastRevNum = num;
                 }
@@ -176,7 +176,7 @@ var postDirectoryBuild = function() {
                 currentList.lastElementChild.appendChild(list);
                 currentList = list;
                 dirNum.push(0);
-            } else if (level < 0) {
+            } elsif (level < 0) {
                 level *= 2;
                 while (level++) {
                     if (level % 2) dirNum.pop();

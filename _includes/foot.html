@@ -2,88 +2,89 @@
 	<div class="footer-social">
 		<div class="footer-container clearfix">
 			<div class="social-list">
- <!--<a class="social segmentfault" target="blank" href="https://segmentfault.com/u/outvanity" title="访问 outvanity_Twitter" data-hover="Segmentfault">Segmentfault</a>-->
-    <a class="social github" target="blank" href="https://github.com/outvanity" title="访问 Outvanity_Github" data-hover="GitHub">GitHub</a>
-    <a class="social twitter" target="blank" href="https://twitter.com/outvanity" title="访问 Outvanity_Twitter" data-hover="Twitter">Twitter</a>
-     <!--<a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/outvanity" title="访问 outvanity_stackoverflow" data-hover="StackOverflow">StackOverflow</a>-->
-          <!--<a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 outvanity_Oschina" data-hover="Oschina">Oschina</a>-->
-     <a class="social rss" target="blank" href="/feed.xml"title="outvanity_RSS" data-hover="RSS">RSS</a>
-	</div>
+				<!--<a class="social segmentfault" target="blank" href="https://segmentfault.com/u/outvanity" title="访问 outvanity_Twitter" data-hover="Segmentfault">Segmentfault</a>-->
+				<a class="social github" target="blank" href="https://github.com/outvanity" title="访问 Outvanity_Github" data-hover="GitHub">GitHub</a>
+				<a class="social twitter" target="blank" href="https://twitter.com/outvanity" title="访问 Outvanity_Twitter" data-hover="Twitter">Twitter</a>
+				<!--<a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/outvanity" title="访问 outvanity_stackoverflow" data-hover="StackOverflow">StackOverflow</a>-->
+				<!--<a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 outvanity_Oschina" data-hover="Oschina">Oschina</a>-->
+				<a class="social rss" target="blank" href="/feed.xml" title="outvanity_RSS" data-hover="RSS">RSS</a>
+			</div>
 		</div>
 	</div>
 	<div class="footer-meta">
-        <div class="footer-container">
-            <div class="meta-item meta-copyright">
-                <div class="meta-copyright-info">
-                    <a href="/" class="info-logo">
-                         <img src="https://outvanity-1252009748.file.myqcloud.com/logo/logo-outvanity.png"   title="访问 outvanity_Blog" data-hover="outvanity_Blog" alt="outvanity_Blog" /> </a>
-                    <div class="info-text">
-                        <!--<p>Theme is <a href="https://www.outvanity.com/2017/08/03/Jekyllthemes.html" title="访问 Jekyll outvanity主题"  data-hover="Jekyll outvanity"target="_blank">Jekyll outvanity</a> by <a href="https://www.outvanity.com/about" target="_blank">outvanity</a></p>-->
-                        <!--<p>Powered by <a href="{{ siteurl.url }}/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>-->
-                        <p>&copy; 2018 Outvanity Blog</p>
-                        	<p><a href="/feed.xml"  title="Outvanity Blog RSS" data-hover="Outvanity Blog RSS">Outvanity Blog RSS</a></p>
-                      {% for post in paginator.posts  limit:10%}
-                      
-                            {% if{paginator.total_posts}==null%}
-         				 <p>总计文章：0篇</p>
-         				    {% else if {paginator.total_posts}!=0% %}
-         				 <p>总计文章：{{paginator.total_posts}}篇</p>
-                      
-                         {% endif %}
-                     {% endfor %}
-                     
-                      <!--<p>本Blog已开源点击Fork</p><iframe src="https://ghbtns.com/github-btn.html?user=outvanity&repo=outvanity.github.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>-->
-                    </div>
-                </div>
-            </div>
-            <div class="meta-item meta-posts">
-                <h3 class="meta-title">置顶文章</h3>
-     <!--置顶-->
-    {% for post in site.posts limit:15 %}
-      {% if post.istop %}
-      <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-        <!--置顶-->
-            </div>
-            <div class="meta-item meta-comments">
-                <h3 class="meta-title">最新文章</h3>
-  {% for post in site.posts limit:14 %}        
-      {% if post.book %}
- <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
+		<div class="footer-container">
+			<div class="meta-item meta-copyright">
+				<div class="meta-copyright-info">
+					<a href="/" class="info-logo">
+						<img src="https://outvanity-1252009748.file.myqcloud.com/logo/logo-outvanity.png" title="访问 outvanity_Blog" data-hover="outvanity_Blog" alt="outvanity_Blog" /> </a>
+					<div class="info-text">
+						<!--<p>Theme is <a href="https://www.outvanity.com/2017/08/03/Jekyllthemes.html" title="访问 Jekyll outvanity主题"  data-hover="Jekyll outvanity"target="_blank">Jekyll outvanity</a> by <a href="https://www.outvanity.com/about" target="_blank">outvanity</a></p>-->
+						<!--<p>Powered by <a href="{{ siteurl.url }}/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>-->
+						<p>&copy; 2018 Outvanity Blog</p>
+						<p>
+							<a href="/feed.xml" title="Outvanity Blog RSS" data-hover="Outvanity Blog RSS">Outvanity Blog RSS</a>
+						</p>
+                   
+						{% if{{paginator.total_posts}} ==" "%}
+						<p>总计文章：0篇</p>
+						{% else %}
+						<p>总计文章：{{paginator.total_posts}}篇</p>
 
+					
+                        {% endif %}
+						<!--<p>本Blog已开源点击Fork</p><iframe src="https://ghbtns.com/github-btn.html?user=outvanity&repo=outvanity.github.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>-->
+					</div>
+				</div>
+			</div>
+			<div class="meta-item meta-posts">
+				<h3 class="meta-title">置顶文章</h3>
+				<!--置顶-->
+				{% for post in site.posts limit:15 %} {% if post.istop %}
+				<li>
+					<a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a>
+				</li>
+				{% endif %} {% endfor %}
+				<!--置顶-->
+			</div>
+			<div class="meta-item meta-comments">
+				<h3 class="meta-title">最新文章</h3> {% for post in site.posts limit:14 %} {% if post.book %}
+				<li>
+					<a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a>
+				</li>
 
-       {%else if post.code %}
- <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
- 
-       {% else if post.miscellaneous %}
- <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-</div>
+				{%elsif post.code %}
+				<li>
+					<a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a>
+				</li>
+
+				{% else post.miscellaneous %}
+				<li>
+					<a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a>
+				</li>
+				{% endif %} {% endfor %}
+			</div>
 		</div>
-    </div>
+	</div>
 </footer>
 <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
 <script src="/search/js/cb-search.js"></script>
 <script>
-$(function () {
-    setTimeout(function () {
-      $('code').removeClass('hljs');
-      $('code').removeClass('language');
-    }, 90);
-});
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'https://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+	$(function() {
+		setTimeout(function() {
+			$('code').removeClass('hljs');
+			$('code').removeClass('language');
+		}, 90);
+	});
+	(function() {
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if(curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		} else {
+			bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
 </script>

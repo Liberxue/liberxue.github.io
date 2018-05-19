@@ -20,7 +20,7 @@
                     }
                     time1 = 0;
                 }
-			}else if(e.keyCode == 27){
+			}elsif(e.keyCode == 27){
                     $(".cb-search-tool").css("display", "none");
                     show = false;
                     time1 = 0;

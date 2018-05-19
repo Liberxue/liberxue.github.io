@@ -15,9 +15,9 @@ layout: default
 					</a>
 					<div class="item-slant reverse-slant  bg-{{ posts.background }}"></div>
 					<div class="item-slant">	<div class="outvanity-title">
-		{% for posts in site.posts %}
+	
 		
-	  	   		{% if posts.code%}代码{% else if posts.book%}书籍{% else if posts.miscellaneous%}杂言{% endif %}
+	  	   		{% if posts.code%}代码{%elsif posts.book%}书籍{% else posts.miscellaneous%}杂言{% endif %}
 	  	   		
 
 				</div></div>
@@ -26,20 +26,20 @@ layout: default
 
 						<div class="item-title"><a href="{{ posts.url }}" title="访问 {{ posts.title }}">{{ posts.title }}</a></div>
 						<a>文章字数：{{ posts.content | number_of_words }}</a>
-									 {% endfor %}
+								
 						<div class="item-meta clearfix">
-							  {% for posts in site.posts %}
+						
 	  	   {% if posts.code%}
 		
 						<div class="item-meta-ico bg-code" style="background: url('https://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-code.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
-                {% else if posts.book%}
+                {% elsif posts.book%}
 		
 						<div class="item-meta-ico bg-book" style="background: url('https://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-book.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
-               {% else if posts.miscellaneous%}
+               {% else  posts.miscellaneous%}
 		
 						<div class="item-meta-ico bg-miscellaneous" style="background: url('https://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-miscellaneous.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
 			 {% endif %}
-       {% endfor %}
+    
              <div class="item-meta-cat">
 				 <a href="/tags#{{ posts.category }}" title="访问 {{ posts.category }}" data-hover="{{ posts.category }}">{{ posts.category }}</a>
 				 <a href="/history#{{ posts.date | date: "%Y"}}" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M"}}">{{ posts.date | date: "%F %H:%M"}}</a></div>
