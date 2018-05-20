@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+	  <meta http-equiv="x-dns-prefetch-control" content="on">   
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+	  <meta http-equiv="Cache-Control" content="no-siteapp"/>  
+    <title>标签-{{ site.title }}</title>
+    {% include head.html %}
+  </head>
+ 
+<body class="bg-grey" gtools_scp_screen_capture_injected="true"><div id="MathJax_Message" style="display: none;"></div>
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?outvanity" title="访问 {{  site.title }}" class="navbar-logo"> <img src="https://outvanity-1252009748.file.myqcloud.com/logo/logo-outvanity.png" alt="{{ site.title }}"> </a>
+        <div class="navbar-menu">
+           {% for link in site.links %}             
+            <a href="{{ link.url }}?outvanity"  title="访问 {{  link.name }}" data-hover="{{link.name}}">{{ link.name }}</a>
+                {% endfor %}
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form method="post" action="/404.html" role="search">
+                <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+                </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu"  onclick="" >
+            <span class="icon-menu cross"   onclick=""><span class="middle"></span></span>
+            <ul  onclick="">
+               {% for link in site.links %}           
+                <li><a href="{{ link.url }}?outvanity" title="访问 {{  link.name }}" data-hover="{{link.name}}">{{ link.name }}</a></li>
+                 {% endfor %}
+            </ul>
+        </div>
+    </div>
+</header>
+
+      <main class="tl f6 relative pa4 pa5-ns overflow-hidden">
+        {% if page.title %}
+          <div class="mb4">
+            {% if page.date %}<div class="fw600 light-silver mt1">{{ page.date | date_to_string }}</div>{% endif %}
+            <h1 class="ttu f3 mt0 lh-title cb mb2">
+              {% if is_post %}
+              {% endif %}
+              {{ page.title }}
+            </h1>
+            {% if is_post and site.share %}
+              <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-action="like"></div>
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="markdown-body">
+          {{ content }}
+        </div>
+        <!--{% if is_post %}{% include signoff.html %}{% endif %}
+      </main>
+      {% if is_post %}{% include pagination.html %}{% endif %}
+    </div>-->
+{% include foot.html %}
+  </body>
+</html>
