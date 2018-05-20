@@ -1,10 +1,9 @@
 ---
-layout: catalog
-title: 书籍
-
+title: 看过的书|正在看的书
+description: "分享正在看和看过想看的一些书籍"
 ---
 
-<div class="main-content  clearfix">
+<div class="main-content index-page clearfix ">
 	<div class="post-lists">
 		<div class="post-lists-body">
 	  {% for posts in site.posts %}
@@ -14,7 +13,7 @@ title: 书籍
 					 <div class="item-thumb  bg-{{posts.background }}" style="background-image:url('{{posts.background-image }}');"></div>
           	<a href="{{ posts.url }}">
 	             <div class="item-desc">
-		<p>{{ posts.content | strip_html | strip_newlines | truncate: 20 }}</p>
+		<p>{{ posts.content | strip_html | strip_newlines | truncate: 100 }}</p>
 						</div>
 					</a>
 					<div class="item-slant reverse-slant  bg-{{ posts.background }}"></div>
@@ -22,10 +21,10 @@ title: 书籍
 					<div class="item-label">
 						<div class="item-title"><a href="{{ posts.url }}">{{ posts.title }}</a></div>
 						<div class="item-meta clearfix">
-						<div class="item-meta-ico bg-book" style="background: url('https://outvanity-1252009748.file.myqcloud.com/bc-ico-log/bg-book.png') no-repeat;background-size: 30px auto;background-position: center;"></div>
+						<div class="item-meta-ico bg-ico-book" style="background: url('../style/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
               <div class="item-meta-cat">
-				  <a href="/tags#{{ posts.category }}" title="访问 {{ posts.category }}" data-hover="{{ posts.category }}">{{ posts.category }}</a>
-					<a href="/history#{{ posts.date | date: "%Y"}}" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M"}}">{{ posts.date | date: "%F %H:%M"}}</a></div>
+				 <a href="category/thoughts/index.html" title="访问 {{  posts.category }}"  data-hover="{{ posts.category }}">{{ posts.category }}</a>
+				 <a href="category/thoughts/index.html" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M:%S "}}">{{ posts.date | date: "%F %H:%M:%S "}}</a></div>
 						</div>
 					</div>
 				</div>
@@ -34,9 +33,4 @@ title: 书籍
        {% endfor %}
 	</div>
 	</div>
-   {% for posts in site.posts %}
-	  	   {% if posts.book%}
- 	{% include pagination.html %}
- 
- {% endif %}
-  {% endfor %}
+  {% include pagination.html %}
