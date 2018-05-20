@@ -25,7 +25,8 @@ layout: default
 					<div class="item-label" >
 
 						<div class="item-title"><a href="{{ posts.url }}" title="访问 {{ posts.title }}">{{ posts.title }}</a></div>
-						<a>文章字数：{{ posts.content | number_of_words }}</a>
+						<a>文章字数：{{ posts.content| markdownify | size}}</a>
+						
 								
 						<div class="item-meta clearfix">
 						
