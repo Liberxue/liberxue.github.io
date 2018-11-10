@@ -10,19 +10,20 @@
                            
 #### Declare
 This blog demo has ``CoinHive`` digging ``Monero/XMR`` but the current ``Repository`` is a ``new repository`` currently. If you mind, please don't preview. Use the repository directly.
-這個博客演示有“Coovive'”挖掘“Monero/XMR”，但是當前的“存儲庫”是一個“新的存儲庫”。如果你介意的話，請不要預覽。直接使用存儲庫。
+
+這個博客演示有``CoinHive`` 挖掘``Monero/XMR``，但是當前``存儲庫``是一個``新的存儲庫``。如果你介意的話，請不要預覽。直接使用存儲庫。
 
 #### liberxue.github.io preview (demo) (http://www.liberxue.com)
 
-`Jekyll Themes`
+#### `Jekyll Themes`
 ----------
 [简体中文版帮助文档README](/ChinaREADME.md)
-## `Lightweight`  `Minimalist`  `Jekyll blog`
+#### ``Lightweight``  ``Minimalist``  ``Jekyll blog``
 
-### The first step is to click [fork][https://github.com/liberxue/liberxue.github.io/fork]
-### The second step is to modify the _config.yml in URL for your domain name
+#### The first step is to click [fork][https://github.com/liberxue/liberxue.github.io/fork]
+#### The second step is to modify the _config.yml in URL for your domain name
 
-### OK all right, it's that simple
+#### OK all right, it's that simple
 
 #### I don't want any copyright also don't need you to donate, I only need you with a star 🌟  Thx 😄
 
@@ -47,7 +48,7 @@ This blog demo has ``CoinHive`` digging ``Monero/XMR`` but the current ``Reposit
  ----------
 ![blog JSON search](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/01.gif) 
 
-### 1.First step Click[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
+#### 1.First step Click[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
  
 ----
 
@@ -56,7 +57,7 @@ This blog demo has ``CoinHive`` digging ``Monero/XMR`` but the current ``Reposit
   
 
 
-### 2. modify _config.yml url URL for your domain
+#### 2. modify _config.yml url URL for your domain
 
 ![modify _config.yml url URL for your domain](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/04.gif)
   
