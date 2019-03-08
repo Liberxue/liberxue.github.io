@@ -8,11 +8,6 @@
                           Copyright (c) 2016-2018 liberxue
                                  http://www.liberxue.com
                            
-#### Declare
-This blog demo has ``CoinHive`` digging ``Monero/XMR`` but the current ``Repository`` is a ``new repository`` currently. If you mind, please don't preview. Use the repository directly.
-
-這個博客演示有``CoinHive`` 挖掘``Monero/XMR``，但是當前``存儲庫``是一個``新的存儲庫``。如果你介意的話，請不要預覽。直接使用存儲庫。
-
 #### liberxue.github.io preview (demo) (http://www.liberxue.com)
 
 #### `Jekyll Themes`
