@@ -29,6 +29,9 @@
 - [x] Automatic paging generation
 - [x] Modify _config.yml's links for your menu
 - [x] Modify the _config.yml of paginate for how many pages you want to page
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/Liberxue/liberxue.github.io.svg)](https://starchart.cc/Liberxue/liberxue.github.io)
 
 ![uiliberxue](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/ui.jpg) 
 
