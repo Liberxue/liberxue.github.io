@@ -1,0 +1,360 @@
+I"2!<h1 id="kmp专题"><center>KMP专题</center></h1>
+
+<h2 id="next数组">Next数组</h2>
+
+<h3 id="利用部分匹配值pm计算法一">利用部分匹配值（PM）计算（法一）：</h3>
+
+<p>部分匹配值：字符前缀和后缀最长相等的前缀后缀长度</p>
+
+<p>例如字符串:’ababa’</p>
+
+\[\begin{aligned}
+&amp;'ababa': \\  
+&amp;'a':0 (前后缀均为空集) \\
+&amp;'ab':前缀：\{a\},后缀：\{b\},相等长度：\{a\} \cap \{ b\}=\emptyset\implies 0  \\
+&amp;'aba':前缀：\{a,ab\},后缀：\{ba,a\},相等长度：\{a,ab\}\cap\{ba,a\}=\{a\}  \implies 1\\
+&amp;'abab':\{a,ab,aba\}\cap\{b,ab,bab\}=\{ab\}\implies 2\\
+&amp;'ababa':\{a,ab,aba,abab\}\cap\{a,ba,aba,baba\}=\{a,aba\}\implies 3\\
+\end{aligned}\]
+
+<p>得PM表：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>S</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <td>PM</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>next数组：由PM表右移一位，左边补-1，右边溢出直接舍弃：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>S</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <td>next</td>
+      <td>-1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>next数组整体加1，得：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>S</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <td>next</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="利用公式计算法二">利用公式计算（法二）：</h3>
+<p>next函数公式：</p>
+
+\[next[j]=
+\begin{cases}
+0&amp;\text{当j=1时}\\
+\max(k|1&lt;k&lt;j \text{且} p_1p_2\dots p_{k-1}='p_{j-k+1}\dots p_{j-1}') &amp;\text{当此集合不空时} \\
+1&amp;\text{其他情况}
+\end{cases}\]
+
+<font color="red">规律：即由1~j-1的串前缀后缀相同个数+ 1</font>
+
+<p>例’abcabx’：</p>
+
+<p>j=6时：j由1~5的串即：’abcab’，其中’ab’=’ab’，故next[6]=3</p>
+
+<p>得：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>j</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>串T</td>
+      <td>a</td>
+      <td>b</td>
+      <td>c</td>
+      <td>a</td>
+      <td>b</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td>next[j]</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="算法实现">算法实现：</h3>
+
+<h4 id="计算next数组的值">计算Next数组的值：</h4>
+
+<pre><code>/*通过计算返回子串T的next数组*/
+void get_next(String T,int *next)
+{
+    int i,j;
+    i=1;
+    j=0;
+    next[1]=0;
+   //令next[1]=0,即next[j]={0,当j=1时}（公式第一种情况）
+    while(i&lt;T[0]){   //T[0]为串T的长度
+        if(j=0||T[i]==T[j])   //若j=0或T[i]=T[j]右移，next[i]=j
+        {
+            ++i;
+            ++j;
+            next[i]=j;
+        }
+        else				//否则，j值回溯，再次比较,直至j=1
+        {
+            j=next[j];
+        }
+    }
+}
+</code></pre>
+
+<h4 id="算法模拟">算法模拟：</h4>
+
+<p>例：T=’ababaaa’</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>j</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>a</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <td>next[j]</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\begin{aligned}
+&amp;\text{起始}：
+i=1,j=0,\textcolor{red}{next[1]=0},i&lt;T[0]=7,\text{进入循环} \\
+&amp;j=0,true\implies i=2,j=1,\textcolor{red}{next[2]=1}\\
+
+&amp;\left.
+\begin{matrix}
+\begin{aligned}
+   &amp;i&lt;T[0]\text{进入循环：}j\not=0,T[2]\not=T[1],false \implies j=next[1]=0 \space \text{回溯} \\
+   &amp;i&lt;T[0]\text{进入循环：}j=0,true \implies i=3,j=1,\textcolor{red}{next[3]=1} \\
+\end{aligned}
+\end{matrix}
+
+\right \}\text{回溯1次，得到next[3]} \\
+
+&amp;i&lt;T[0]\text{进入循环：}j\not=0,T[3]=T[1],true\implies i=4,j=2 ,\textcolor{red}{next[4]=2}\\
+
+&amp;i&lt;T[0]\text{进入循环：}j\not=0,T[4]=T[2],true\implies i=5,j=3 ,\textcolor{red}{next[5]=3}\\
+&amp;i&lt;T[0]\text{进入循环：}j\not=0,T[5]=T[3],true\implies i=6,j=4 ,\textcolor{red}{next[6]=4}\\
+
+&amp;\left.
+\begin{matrix}
+\begin{aligned}
+   &amp;i&lt;T[0]\text{进入循环：}j\not=0,T[6]\not=T[4],false \implies i=6,j=next[4]=2 \space \text{回溯} \\
+   &amp;i&lt;T[0]\text{进入循环：}j\not=0,T[6]\not=T[2],false \implies i=6,j=next[2]=1 \space \text{回溯} \\
+   &amp;i&lt;T[0]\text{进入循环：}j\not=0,T[6]=T[1],true \implies i=7,j=2,\textcolor{red}{next[7]=2} \\
+\end{aligned}
+\end{matrix}
+
+\right \}\text{回溯2次，得到next[7]} \\
+&amp;i=T[0]\text{退出循环}
+\end{aligned}\]
+
+<h4 id="求解方法">求解方法：</h4>
+
+<h5 id="思路">思路：</h5>
+
+<ol>
+  <li>确定next数组第一、二位为0，1，可由next[1]=0及j=0，…,next[i]=j实现，后面求每一位next值时，根据前一位进行比较</li>
+  <li>从第三位开始，将前一位与<font color="red">其next值对应的内容</font>比较</li>
+  <li>若相似，该位next值为<font color="red">前一位next值+1</font></li>
+  <li>若不相似，向前寻找next值对应内容与前一位比较</li>
+  <li>直到找到<font color="red">某位上的内容</font>的<font color="red">next值对应内容</font>与前一位相等为止</li>
+  <li>则这个位对应的值+1即为需求位的next值</li>
+  <li>若找到第一位都没有与前一位相等的内容，那么求解的位为next值为1</li>
+</ol>
+
+<p>例：T=’ababaaa’</p>
+
+<ol>
+  <li>则</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>a</th>
+      <th>b</th>
+      <th>a</th>
+      <th>b</th>
+      <th>a</th>
+      <th>a</th>
+      <th>a</th>
+      <th>T</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>j</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>next</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>第3位a前一位为第2位b，b的next值为1，1对应的内容为a且b与a不同，继续向前寻找next值对应内容与第2位b比较，但到第1位都没有与b相等的内容，则第3位next值为1，即next[3]=1</li>
+  <li>第4位b前一位a的next值为1，对应内容a，相同，故该位b的next值为前一位a的next值+1，即next[4]=next[3]+1=2</li>
+  <li>第5位a前一位b的next值为2，对应内容b，相同，即next[5]=next[4]+1=3</li>
+  <li>第6位a前一位a的next值为3，对应内容a，相同，即next[6]=next[5]+1=4</li>
+  <li>第7位a前一位a的next值为4，对应内容b，不相同，向前寻找next值对应内容与前一位比较，第4位b的next[4]=2,对应b，不相同，继续向前。第2位b的next[2]=1,对应a，相同。<font color="red">因为在第2位处实现的相同，故next[7]=next[2]+1=2</font>(参考思路5)</li>
+</ol>
+
+<h4 id="回溯原理分析">回溯原理分析</h4>
+
+<p>定义：</p>
+
+\[next[j]=
+\begin{cases}
+0&amp;\text{当j=1时}\\
+\max(k|1&lt;k&lt;j \text{且} p_1p_2\dots p_{k-1}=p_{j-k+1}\dots p_{j-1}) &amp;\text{当此集合不空时} \\
+1&amp;\text{其他情况}
+\end{cases}\]
+
+<p>例：T=’aabcaabcaab(c)’</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Massters/images/images/kmp_2.png" alt="kmp" /></p>
+
+<p>已知：next[j]=7,求next[j+1]?</p>
+
+:ET

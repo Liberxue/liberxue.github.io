@@ -1,0 +1,19 @@
+I"b<ul>
+  <li>
+    <p>使用Jekyll生成的页面，如要在里面使用数学公式，在Typora上面显示正常，但是在网页上却渲染不出来。</p>
+  </li>
+  <li>
+    <p>使用MathJax的脚本（v3)版本就可以正常显示出数学公式了，但是KaTeX里面的大括号\begin{cases}用法却显示不出来，多显示了一个MathJax的数学格式\(,和\).而且大括号前端的字符也有串位现象<img src="https://cdn.jsdelivr.net/gh/Massters/images/images/Mathjax.png" alt="error" /></p>
+
+    <ul>
+      <li>
+        <p>解决方法：将公式与上下一行文字之间加入一个空行即可解决</p>
+
+        <p><img src="https://cdn.jsdelivr.net/gh/Massters/images/images/Mathjax_2.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Massters/images/images/Mathjax_3.png" alt="" /></p>
+:ET
