@@ -17,8 +17,8 @@ links:
   - name:         鸡汤
     url:          /book
     external:     false
-  - name:         旅游
-    url:          /road
+  - name:         其他
+    url:          /other
     external:     false
   - name:         归档
     url:          /archives
