@@ -6,9 +6,6 @@ signoff:          "Ralts" # Your name
 google_analytics: UA-101222464-1
 share:            true 
 markdown: kramdown
-
-plugins:
-  - jekyll-katex
 # 分页
 paginate: 15
 paginate_path: "liberxuepage:num"
