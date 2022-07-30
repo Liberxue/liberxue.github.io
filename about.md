@@ -3,13 +3,10 @@ layout: blog
 title: 关于
 description: "记录一下学习过程~"
 data: 2022-07-29
-tags: 
-- Ralts
-- 简述
-- 关于
 redirect_from:
   - /about/
 ---
+本站主要记录分享一些自己的学习过程~
 
 <font size=6>我看似穷途末路，却道似苦尽甘来OvO~</font>
 
