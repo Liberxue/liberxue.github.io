@@ -217,8 +217,20 @@ var postDirectoryBuild = function() {
     createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
 };
 postDirectoryBuild();
+
+
+
 </script>
   <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script >lang=hljs.initHighlightingOnLoad();</script>   
+
+<!--mathjax开关-->
+{/% if default.mathjax %}
+<span>
+  {/% include mathjax_support.html %}
+</span>
+{/% endif %}
+
+
  </body>
 </html>
