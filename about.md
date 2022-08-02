@@ -8,7 +8,7 @@ redirect_from:
 ---
 本站主要记录分享一些自己的学习过程~
 
-<font size=6>我看似穷途末路，却道似苦尽甘来OvO~</font>
+<font size=6>我看似穷途末路，却苦尽甘来OvO~</font>
 
 > 苟非吾之所有，虽一毫而莫取~
 
