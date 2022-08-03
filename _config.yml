@@ -42,3 +42,7 @@ defaults:
 
 # Gems
 gems: [jekyll-paginate]
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
