@@ -23,8 +23,8 @@ description: "哎嗨嗨嗨，鸡汤来喽~"
 						<div class="item-meta clearfix">
 						<div class="item-meta-ico bg-ico-book" style="background: url('../style/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
               <div class="item-meta-cat">
-				 <a href="category/thoughts/index.html" title="访问 {{  posts.category }}"  data-hover="{{ posts.category }}">{{ posts.category }}</a>
-				 <a href="category/thoughts/index.html" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M:%S "}}">{{ posts.date | date: "%F %H:%M:%S "}}</a></div>
+				 <a href="/tags#{{ posts.category }}" title="访问 {{  posts.category }}"  data-hover="{{ posts.category }}">{{ posts.category }}</a>
+				 <a href="/archives#{{ posts.date | date: "%Y"}}" title="访问 {{ posts.date | date: "%Y"}}" data-hover="{{ posts.date | date: "%F %H:%M:%S "}}">{{ posts.date | date: "%F %H:%M:%S "}}</a></div>
 						</div>
 					</div>
 				</div>
