@@ -3,3 +3,4 @@ _site/
 .vscode/
 .VSCodeCounter/
 .jekyll-cache/
+.jekyll-cache\Jekyll\Cache/

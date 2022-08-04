@@ -32,7 +32,7 @@
             <div class="meta-item meta-comments">
                 <h3 class="meta-title">最新文章</h3>
   {% for post in site.posts limit:14 %}        
-      {% if post.book %}
+      {% if post.soul %}
  <li><a href="{{ post.url }}" title="访问 {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
       {% endif %}
     {% endfor %}

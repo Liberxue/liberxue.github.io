@@ -11,8 +11,8 @@
           	<a href="{{ posts.url }}">
 	             <div class="item-desc">
 		<p>{{ posts.content | strip_html | strip_newlines | truncate: 100 }}</p>
-						</div>
-					</a>
+				</div>
+			</a>
 					<div class="item-slant reverse-slant  bg-{{ posts.background }}"></div>
 					<div class="item-slant">	<div class="liberxue-title">
 				原创
@@ -30,5 +30,5 @@
       </div>
        {% endfor %}
 	</div>
-	</div>
+</div>
   {% include pagination.html %}

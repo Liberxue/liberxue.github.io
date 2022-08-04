@@ -1,11 +1,13 @@
 <!-- 分页链接 -->
        <div class="lists-navigator clearfix">   
          <ol class="page-navigator">
+
         <li class="current">
             <a href="/?liberxue" data-hover="首页">
                 <span>首页</span>
             </a>
         </li>
+
         <li class="current">
         {% if paginator.page == 1 %}
             <span>&laquo;</span>
@@ -19,8 +21,10 @@
             </a>
         {% endif %}
         </li>
+
         {% for i in (1..paginator.total_pages) limit:9 offset:{{paginator.page-1}} %}
             {% if paginator.page == i %}
+
         <li class="current">
             {% else %}
         <li>
@@ -31,7 +35,9 @@
             <a href="/liberxuepage{{i}}?liberxue" data-hover="{{i}}">{{i}}</a>
             {% endif %}
         </li>
+
         {% endfor %}
+
         <li class="current">
             {% if paginator.page == paginator.total_pages %}
             <span>&raquo;</span>
@@ -41,11 +47,13 @@
             </a>
             {% endif %}
         </li>
+
         <li>
             <a href="/liberxuepage{{paginator.total_pages}}?liberxue" data-hover="末页">
                 <span>末页</span>
             </a>
         </li>
+        
         <li class="current">
             <span>第{{paginator.page}}页 / 共{{paginator.total_pages}}页</span>
       </ol> 

@@ -17,8 +17,14 @@ links:
   - name:         首页
     url:          /
     external:     false
+  - name:         408
+    url:          /Basics
+    external:     false
+  - name:         Code
+    url:          /code
+    external:     false
   - name:         鸡汤
-    url:          /book
+    url:          /soul
     external:     false
   - name:         其他
     url:          /other
