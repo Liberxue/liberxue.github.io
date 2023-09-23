@@ -1,0 +1,601 @@
+
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+  <head>
+    <meta content='循环.迭代.遍历.递归|区别.解释.说明.对比 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='title' />
+    <meta content='循环.迭代.遍历.递归|区别.解释.说明.对比 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='og:title' />
+    <title>循环.迭代.遍历.递归|区别.解释.说明.对比 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>循环.迭代.遍历.递归|区别.解释.说明.对比 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="  loop、iterate、traversal和recursion这几个词是计算机技术书中经常会出现的几个词汇。众所周知，这几个词分别翻译为：循环、迭代、遍历和递归。乍一看，这几个词好像都与重复（repeat）有关，但有的又好像不完..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="循环.迭代.遍历.递归|区别.解释.说明.对比 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="  loop、iterate、traversal和recursion这几个词是计算机技术书中经常会出现的几个词汇。众所周知，这几个词分别翻译为：循环、迭代、遍历和递归。乍一看，这几个词好像都与重复（repeat）有关，但有的又好像不完..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="循环.迭代.遍历.递归|区别.解释.说明.对比 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="  loop、iterate、traversal和recursion这几个词是计算机技术书中经常会出现的几个词汇。众所周知，这几个词分别翻译为：循环、迭代、遍历和递归。乍一看，这几个词好像都与重复（repeat）有关，但有的又好像不完..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="  loop、iterate、traversal和recursion这几个词是计算机技术书中经常会出现的几个词汇。众所周知，这几个词分别翻译为：循环、迭代、遍历和递归。乍一看，这几个词好像都与重复（repeat）有关，但有的又好像不完..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000/2017/03/22/loopand-iterate.html' property='og:url' />
+  <meta content="  loop、iterate、traversal和recursion这几个词是计算机技术书中经常会出现的几个词汇。众所周知，这几个词分别翻译为：循环、迭代、遍历和递归。乍一看，这几个词好像都与重复（repeat）有关，但有的又好像不完..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="" gtools_scp_screen_capture_injected="true">
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                         
+            <a href="http://localhost:4000/">首页</a>
+                             
+            <a href="http://localhost:4000/book">书籍</a>
+                             
+            <a href="http://localhost:4000/road">旅游</a>
+                             
+            <a href="http://localhost:4000/archives">归档</a>
+                             
+            <a href="http://localhost:4000/tags">标签</a>
+                             
+            <a href="http://localhost:4000/about">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form id="cb-search-btn" role="search">
+         <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+        </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="http://localhost:4000/">首页</a></li>
+                            
+                <li><a href="http://localhost:4000/book">书籍</a></li>
+                            
+                <li><a href="http://localhost:4000/road">旅游</a></li>
+                            
+                <li><a href="http://localhost:4000/archives">归档</a></li>
+                            
+                <li><a href="http://localhost:4000/tags">标签</a></li>
+                            
+                <li><a href="http://localhost:4000/about">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="post-header-thumb bg-white}">
+	<div class="post-header-thumb-op"></div>
+	<div class="post-header-thumb">
+		<div class="post-header-thumb-container">
+    <h1 class="post-title" itemprop="name headline">
+	循环.迭代.遍历.递归|区别.解释.说明.对比</h1>
+		 <div class="post-data">  
+	 <time datetime="2017-03-22 00:00:00" itemprop="datePublished">发布时间：2017-03-22 00:00:00</time>
+     <a href="/tags#loop" title="访问 loop" data-hover="博客分类: loop">博客分类: loop</a>
+    <a href="#read"> 阅读次数: comments</a> 
+			</div>
+            <div class="post-tags">
+                
+      
+      
+       
+          <a href="/tags#循环" title="访问循环" data-hover="循环">
+          循环 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#迭代" title="访问迭代" data-hover="迭代">
+          迭代 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#遍历" title="访问遍历" data-hover="遍历">
+          遍历 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#递归" title="访问递归" data-hover="递归">
+          递归 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#loop" title="访问loop" data-hover="loop">
+          loop <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#iterate" title="访问iterate" data-hover="iterate">
+          iterate <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#traversal" title="访问traversal" data-hover="traversal">
+          traversal <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#recursion" title="访问recursion" data-hover="recursion">
+          recursion <span>(1)</span>
+          
+</a>
+      
+      
+      
+     
+	</div>
+</div>
+</div></div>
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			循环.迭代.遍历.递归|区别.解释.说明.对比</h1>
+		<div class="post-data">
+				<time datetime="2017-03-22 00:00:00" itemprop="datePublished">2017-03-22 00:00:00</time>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+         <p class="post-tags">
+    
+      
+      
+       
+          <a href="/tags#循环" title="访问循环" data-hover="循环">
+          循环 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#迭代" title="访问迭代" data-hover="迭代">
+          迭代 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#遍历" title="访问遍历" data-hover="遍历">
+          遍历 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#递归" title="访问递归" data-hover="递归">
+          递归 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#loop" title="访问loop" data-hover="loop">
+          loop <span>(1)</span>
+          </a>
+       
+          <a href="/tags#iterate" title="访问iterate" data-hover="iterate">
+          iterate <span>(1)</span>
+          </a>
+       
+          <a href="/tags#traversal" title="访问traversal" data-hover="traversal">
+          traversal <span>(1)</span>
+          </a>
+       
+          <a href="/tags#recursion" title="访问recursion" data-hover="recursion">
+          recursion <span>(1)</span>
+          </a>
+      
+      
+      
+     
+</p>
+<blockquote>
+  <p>loop、iterate、traversal和recursion这几个词是计算机技术书中经常会出现的几个词汇。众所周知，这几个词分别翻译为：循环、迭代、遍历和递归。乍一看，这几个词好像都与重复（repeat）有关，但有的又好像不完全是重复的意思。那么这几个词到底各是什么含义，有什么区别和联系呢？下面就试着解释一下。</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>类别</th>
+      <th>过程</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>循环<code class="highlighter-rouge">loop</code></td>
+      <td>满足条件的情况下</td>
+      <td>重复执行同一段代码</td>
+    </tr>
+    <tr>
+      <td>迭代<code class="highlighter-rouge">iterate</code></td>
+      <td>按照某种顺序</td>
+      <td>逐个访问列表中的每一项</td>
+    </tr>
+    <tr>
+      <td>遍历<code class="highlighter-rouge">traversal</code></td>
+      <td>按照一定的规则</td>
+      <td>访问树形结构中的每个节点</td>
+    </tr>
+    <tr>
+      <td>递归<code class="highlighter-rouge">recursion</code></td>
+      <td>一个函数不断调用自身的行为。比如，以编程方式输出著名的斐波纳契数列</td>
+      <td>一个函数不断调用自身的行为</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<p>有了以上定义，这几个概念之间的区别其实就比较清楚了。至于它们之间的联系，严格来讲，它们似乎都属于<code class="highlighter-rouge">算法</code>的范畴。换句话说，它们只不过是解决问题的不同手段和方式，而本质上则都是<code class="highlighter-rouge">计算机编程</code>中达成特定目标的途径。</p>
+
+<h1 id="迭代">迭代</h1>
+<hr />
+
+<p><code class="highlighter-rouge">迭代算法</code>是用计算机解决问题的一种基本方法。它利用计算机运算速度快、适合做重复性操作的特点，让计算机对一组指令（或一定步骤）进行重复执行，在每次执行这组指令（或这些步骤）时，都从变量的原值推出它的一个新值。</p>
+
+<h2 id="利用迭代算法解决问题需要做好以下三个方面的工作">利用<code class="highlighter-rouge">迭代算法</code><strong>解决问题</strong>，需要做好以下三个方面的工作：</h2>
+<ul>
+  <li>确定迭代变量。在可以用迭代算法解决的问题中，至少存在一个直接或间接地不断由旧值递推出新值的变量，这个变量就是迭代变量。</li>
+  <li>建立迭代关系式。所谓迭代关系式，指如何从变量的前一个值推出其下一个值的公式(或关系)。迭代关系式的建立是解决迭代问题的关键，通常可以使用递推或倒推的方法来完成。</li>
+  <li>对迭代过程进行控制。在什么时候结束迭代过程?这是编写迭代程序必须考虑的问题。不能让迭代过程无休止地重复执行下去。迭代过程的控制通常可分为两种情况：一种是所需的迭代次数是个确定的值，可以计算出来;另一种是所需的迭代次数无法确定。对于前一种情况，可以构建一个固定次数的循环来实现对迭代过程的控制;对于后一种情况，需要进一步分析出用来结束迭代过程的条件。</li>
+  <li>可以用迭代的算法有很经典的问题，比如兔子产子问题：假定你有一雄一雌一对刚出生的兔子，它们在长到一个月大小时开始交配，在第二月结束时，雌兔子产下另一对兔子，过了一个月后它们也开始繁殖，如此这般持续下去。每只雌兔在开始繁殖时每月都产下一对兔子，假定没有兔子死亡，在一年后总共会有多少对兔子？</li>
+  <li></li>
+  <li>还有上楼梯的走法问题：有一段楼梯有10级台阶，规定每一步只能跨一级或两级，要登上第10级台阶有几种不同的走法？</li>
+</ul>
+
+<h1 id="迭代与循环">迭代与循环</h1>
+<hr />
+<h3 id="先从字面上看">先从字面上看：</h3>
+<hr />
+<p>迭代：“迭”：轮流，轮番，替换，交替，更换。“代”：代替。所以迭代的意思是：变化的循环，这种变化就是轮番代替，轮流代替。
+循环：不变的重复。
+个人认为迭代是循环的一种，循环体代码分为固定循环体，和变化的循环体。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> for($i=0; $i &lt; 8; $i++){
+    echo 'Welcome to liberxue blog';
+}
+</code></pre>
+</div>
+<h1 id="实现迭代">实现迭代</h1>
+<hr />
+<div class="highlighter-rouge"><pre class="highlight"><code>$sum = 0;
+
+for($i = 1; $i &lt;= 1000; $i++ ){
+    $sum = $sum + i;
+}
+</code></pre>
+</div>
+
+<p>上面的迭代是常见的 <code class="highlighter-rouge">递增式迭代</code>。类似的还有<code class="highlighter-rouge">递减式迭代</code>，<code class="highlighter-rouge">递乘式迭代</code>。</p>
+
+<p>迭代的好处：迭代减少了<code class="highlighter-rouge">冗余代码</code>，提高了代码的利用率和动态性。</p>
+
+<h4 id="循环迭代与递归">循环、迭代与递归</h4>
+<hr />
+<ol>
+  <li>递归算法与迭代算法的设计思路区别在于：函数或算法是否具备收敛性，当且仅当一个算法存在预期的收敛效果时，采用递归算法才是可行的，否则，就不能使用递归算法。</li>
+</ol>
+
+<blockquote>
+  <p>当然，从理论上说，所有的递归函数都可以转换为迭代函数，反之亦然，然而代价通常都是比较高的。但从算法结构来说，递归声明的结构并不总能够转换为迭代结构，原因在于结构的引申本身属于递归的概念，用迭代的方法在设计初期根本无法实现，这就像动多态的东西并不总是可以用静多态的方法实现一样。这也是为什么在结构设计时，通常采用递归的方式而不是采用迭代的方式的原因，一个极典型的例子类似于链表，使用递归定义及其简单，但对于内存定义(数组方式)其定义及调用处理说明就变得很晦涩，尤其是在遇到环链、图、网格等问题时，使用迭代方式从描述到实现上都变得很不现实。</p>
+</blockquote>
+
+<ol>
+  <li>递归其实是方便了程序员难为了机器。它只要得到数学公式就能很方便的写出程序。优点就是易理解，容易编程。但递归是用栈机制实现的，每深入一层，都要占去一块栈数据区域，对嵌套层数深的一些算法，递归会力不从心，空间上会以内存崩溃而告终，而且递归也带来了大量的函数调用，这也有许多额外的时间开销。所以在深度大时，它的时空性就不好了。</li>
+</ol>
+
+<blockquote>
+  <p>循环其缺点就是不容易理解，编写复杂问题时困难。优点是效率高。运行时间只因循环次数增加而增加，没什么额外开销。空间上没有什么增加。</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>局部变量占用的内存是一次性的，也就是O(1)的空间复杂度，而对于递归（不考虑尾递归优化的情况），每次函数调用都要压栈，那么空间复杂度是O(n)，和递归次数呈线性关系。</p>
+  </li>
+  <li>
+    <h2 id="递归程序改用循环实现的话一般都是要自己维护一个栈的以便状态的回溯如果某个递归程序改用循环的时候根本就不需要维护栈那其实这个递归程序这样写只是意义明显一些不一定要写成递归形式但很多递归程序就是为了利用函数自身在系统栈上的auto变量记录状态以便回溯">递归程序改用循环实现的话，一般都是要自己维护一个栈的，以便状态的回溯。如果某个递归程序改用循环的时候根本就不需要维护栈，那其实这个递归程序这样写只是意义明显一些，不一定要写成递归形式。但很多递归程序就是为了利用函数自身在系统栈上的auto变量记录状态，以便回溯。</h2>
+    <h6 id="原理上讲所有递归都是可以消除的代价就是可能自己要维护一个栈而且我个人认为很多情况下用递归还是必要的它往往能把复杂问题分解成更为简单的步骤而且很能反映问题的本质">原理上讲，所有递归都是可以消除的，代价就是可能自己要维护一个栈。而且我个人认为，很多情况下用递归还是必要的，它往往能把复杂问题分解成更为简单的步骤，而且很能反映问题的本质。</h6>
+  </li>
+</ol>
+
+<p>递归其实就是利用系统<code class="highlighter-rouge">堆栈</code>，实现<code class="highlighter-rouge">函数</code>自身调用，或者是<code class="highlighter-rouge">相互调用</code>的过程。在通往边界的过程中，都会把单步地址保存下来，知道等出边界，再按照先进后出的进行运算，这正如我们装木桶一样，每一次都只能把东西方在最上面，而取得时候，先放进取的反而最后取出。递归的数据传送也类似。但是递归不能无限的进行下去，必须在一定条件下停止自身调用，因此它的边界值应是明确的。就向我们装木桶一样，我们不能总是无限制的往里装，必须在一定的时候把东西取出来。比较简单的递归过程是阶乘函数，你可以去看一下。但是递归的运算方法，往往决定了它的效率很低，因为数据要不断的<code class="highlighter-rouge">进栈出栈</code>。</p>
+
+		<p class="post-info">
+			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:2017-03-22 00:00:00</p>
+	</div>
+</article>
+
+<!-- <div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+					<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="induction.html">归纳的随想</a></div>
+						<div class="item-meta clearfix">
+														<div class="item-meta-ico bg-ico-image" style="background: url('../usr/themes/pinghsu/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+	                        							<div class="item-meta-cat"><a href="../category/thoughts/index.html">Thoughts</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+	</div>
+</div> -->
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!--liberxueconnnet-menu-->
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<!--liberxueconnnet-menu-->
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script >lang=hljs.initHighlightingOnLoad();</script>   
+ </body>
+</html>

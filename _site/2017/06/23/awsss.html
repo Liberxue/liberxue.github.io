@@ -1,0 +1,578 @@
+
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+  <head>
+    <meta content='Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='title' />
+    <meta content='Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='og:title' />
+    <title>Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="免费AWS      Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量。需要的赶紧注册并启用，需要信用卡信息。..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="免费AWS      Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量。需要的赶紧注册并启用，需要信用卡信息。..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="免费AWS      Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量。需要的赶紧注册并启用，需要信用卡信息。..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="免费AWS      Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量。需要的赶紧注册并启用，需要信用卡信息。..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000/2017/06/23/awsss.html' property='og:url' />
+  <meta content="免费AWS      Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量。需要的赶紧注册并启用，需要信用卡信息。..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="" gtools_scp_screen_capture_injected="true">
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                         
+            <a href="http://localhost:4000/">首页</a>
+                             
+            <a href="http://localhost:4000/book">书籍</a>
+                             
+            <a href="http://localhost:4000/road">旅游</a>
+                             
+            <a href="http://localhost:4000/archives">归档</a>
+                             
+            <a href="http://localhost:4000/tags">标签</a>
+                             
+            <a href="http://localhost:4000/about">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form id="cb-search-btn" role="search">
+         <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+        </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="http://localhost:4000/">首页</a></li>
+                            
+                <li><a href="http://localhost:4000/book">书籍</a></li>
+                            
+                <li><a href="http://localhost:4000/road">旅游</a></li>
+                            
+                <li><a href="http://localhost:4000/archives">归档</a></li>
+                            
+                <li><a href="http://localhost:4000/tags">标签</a></li>
+                            
+                <li><a href="http://localhost:4000/about">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="post-header-thumb bg-white}">
+	<div class="post-header-thumb-op"></div>
+	<div class="post-header-thumb">
+		<div class="post-header-thumb-container">
+    <h1 class="post-title" itemprop="name headline">
+	Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss</h1>
+		 <div class="post-data">  
+	 <time datetime="2017-06-23 07:54:19" itemprop="datePublished">发布时间：2017-06-23 07:54:19</time>
+     <a href="/tags#ss" title="访问 ss" data-hover="博客分类: ss">博客分类: ss</a>
+    <a href="#read"> 阅读次数: comments</a> 
+			</div>
+            <div class="post-tags">
+                
+      
+      
+       
+          <a href="/tags#ss" title="访问ss" data-hover="ss">
+          ss <span>(2)</span>
+          
+</a>
+       
+          <a href="/tags#Aws" title="访问Aws" data-hover="Aws">
+          Aws <span>(2)</span>
+          
+</a>
+       
+          <a href="/tags#shadowsocks" title="访问shadowsocks" data-hover="shadowsocks">
+          shadowsocks <span>(2)</span>
+          
+</a>
+       
+          <a href="/tags#EC2" title="访问EC2" data-hover="EC2">
+          EC2 <span>(3)</span>
+          
+</a>
+       
+          <a href="/tags#Ubuntu" title="访问Ubuntu" data-hover="Ubuntu">
+          Ubuntu <span>(2)</span>
+          
+</a>
+      
+      
+      
+     
+	</div>
+</div>
+</div></div>
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss</h1>
+		<div class="post-data">
+				<time datetime="2017-06-23 07:54:19" itemprop="datePublished">2017-06-23 07:54:19</time>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+         <p class="post-tags">
+    
+      
+      
+       
+          <a href="/tags#ss" title="访问ss" data-hover="ss">
+          ss <span>(2)</span>
+          </a>
+       
+          <a href="/tags#Aws" title="访问Aws" data-hover="Aws">
+          Aws <span>(2)</span>
+          </a>
+       
+          <a href="/tags#shadowsocks" title="访问shadowsocks" data-hover="shadowsocks">
+          shadowsocks <span>(2)</span>
+          </a>
+       
+          <a href="/tags#EC2" title="访问EC2" data-hover="EC2">
+          EC2 <span>(3)</span>
+          </a>
+       
+          <a href="/tags#Ubuntu" title="访问Ubuntu" data-hover="Ubuntu">
+          Ubuntu <span>(2)</span>
+          </a>
+      
+      
+      
+     
+</p>
+<h1 id="免费aws">免费AWS</h1>
+<ul>
+  <li>
+    <p>Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量。需要的赶紧注册并启用，需要信用卡信息。</p>
+  </li>
+  <li>
+    <p>创建免费AWS账号，选择EC2服务（还有各种神奇的服务啊，看不懂就先绕行了）。</p>
+  </li>
+  <li>
+    <p>创建一个“实例”（image），其实是开了个新的虚拟服务器。有一大堆免费的操作系统可选，经实践，选Ubuntu是可以用于shadowsocks服务的（应该还有其他选择）。实例的设置都按默认就可以，唯一注意的，在安全组（Security group）设置中加一条规则，打开TCP的端口8989（跟后面shadowsocks设置相一致）。——此处对于入站ip的设置，没有固定ip的人恐怕只好先设成对所有ip开放？需要请教有经验的人这里如何设置。</p>
+  </li>
+  <li>
+    <p>设置完成并启动实例后，中间有一步需要下载密钥。下载pem文件后，建议放在”系统磁盘-用户-你的用户名”这个目录里，也就是启动“终端”后默认的那个目录下，之后连接会比较便利。</p>
+  </li>
+  <li>
+    <p>在浏览器中回到EC2的控制面板，不出意外你将看到这个实例的状态为亮着绿灯的running。点击上方的“连接”，将弹出一个窗口</p>
+  </li>
+  <li>
+    <p>我选择用ssh客户端连接，但实在没找到好用的客户端，最后还是用系统自带的“终端”程序，嗯，能用就好。此间，参照了若干前人经验，主要是这篇，然后磕磕碰碰不求甚解地最终实现了……简单归纳下：</p>
+  </li>
+</ul>
+
+<h1 id="运行终端程序">运行终端程序</h1>
+
+<p>（可以先敲 ls，回车如果能看到你的密钥文件，就确定该文件就在默认目录里，否则把文件移动过来吧）,输入命令（请换成你实际的密钥文件名，以下同）：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>chmod 400 liberxue.pem
+
+</code></pre>
+</div>
+<ul>
+  <li>
+    <p>如果不执行<code class="highlighter-rouge">chmod 400</code>会报错：</p>
+  </li>
+  <li>
+    <p>从刚刚的Amazon窗口里拷贝这一段，贴在终端程序的命令行里（如果你找到了直接拷贝粘贴就可以，形式如下）：</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh -i 你密钥的文件名.pem ubuntu@你实例的公有ip
+</code></pre>
+</div>
+
+<h2 id="连上了吧依次运行如下命令">连上了吧？依次运行如下命令：</h2>
+<h3 id="远程下载脚本">远程下载脚本：</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>wget –no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
+</code></pre>
+</div>
+<h3 id="变为可执行文件">变为可执行文件：</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>chmod +x shadowsocks.sh
+</code></pre>
+</div>
+<h3 id="运行脚本安装并启动shadowsocks">运行脚本，安装并启动shadowsocks:</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
+</code></pre>
+</div>
+<ul>
+  <li>
+    <p>(如果以上命令无效并提示该脚本没有在root权限运行的英文，请在该命令行最开头加上sudo并空格，再试一次。会让你输入密码，如果未修改过默认是脚本里的密码teddysun.com）</p>
+  </li>
+  <li>如果顺利的话，shadowsocks应该已经在你的亚马逊虚拟云服务器上运行了。运行如下命令可以检查其状态：
+    <div class="highlighter-rouge"><pre class="highlight"><code>/etc/init.d/shadowsocks status
+</code></pre>
+    </div>
+  </li>
+  <li>到这里下载Mac OSX的客户端。更多的安装说明和下载选择，见使用说明。</li>
+  <li>安装该客户端并启动，它的图标会出现在屏幕最上端。服务器的设定按照终端程序里刚安装完shadowsocks的提示来填写：
+    <div class="highlighter-rouge"><pre class="highlight"><code>Congratulations, shadowsocks install completed!
+Your Server IP:你实例的公有ip
+Your Server Port:8989
+Your Password:没改过的话就是teddysun.com
+Your Local IP:127.0.0.1
+Your Local Port:1080
+Your Encryption Method:aes-256-cfb
+</code></pre>
+    </div>
+  </li>
+  <li>对了一定要在<code class="highlighter-rouge">aws</code>安全组添加入门端口默认的是8989</li>
+</ul>
+
+<p>点按屏幕上端的程序图标，确定你的AWS服务器已连接（若连接前面有个勾）。Shadowsocks 会自动设置为全局 PAC 代理，Chrome、Safari、Twitter 都可以正常使用了。如果你开启了其它翻墙工具，请先将它们关闭。
+如果你不想任何网站都通过代理，而是让程序智能地选择墙内网站的直接访问、墙外网站自动代理的话——菜单栏图标里点“自动代理模式”。并配合Chrome 扩展程序 SwitchySharp使用，请把它的模式设置为「使用系统代理设置」。
+结果：墙内网站会不通过代理直接连接（访问ip138.com，显示本机ip仍然是北京联通的），墙外的实验了Gmail，google搜索，google日历，facebook，twitter，youtube，速度都很快！而且迄今基本没出现连接障碍。</p>
+
+<h3 id="后续">后续：</h3>
+<ol>
+  <li>再长期观察其稳定可靠性；</li>
+  <li>有空再来研究手机端的使用方法；</li>
+  <li>搞清Amazon EC2的安全组入站ip的规则设定问题。</li>
+</ol>
+
+<p>update 2017/01:
+半年多的运行，事实证明，非常方便、可靠、稳定！观看youtube视频基本无障碍。另，可以使用dropbox啦，只需要在dropbox的设置里，把网络代理设为socks5,127.0.0.1,1080 （和前面的服务器设定一致），shadowsocks保持在自动代理模式，就可以用了。</p>
+
+<ul>
+  <li>对了免费的AWS可以创建多个ecs哈也就是说你可以有多个免费的节点。</li>
+</ul>
+
+<h1 id="windows客户端下载地址需要net462环境">windows客户端下载地址（需要.net4.6.2环境）：</h1>
+
+<p>https://github.com/shadowsocks/shadowsocks-windows/releases</p>
+
+<h1 id="os-x客户端下载地址">OS X客户端下载地址：</h1>
+
+<p>https://github.com/shadowsocks/shadowsocks-iOS/releases</p>
+
+<h2 id="局域网-代理设置">局域网 代理设置</h2>
+<p>开启win局域网共享</p>
+
+<h2 id="客户端设置代理为">客户端设置代理为：</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>http:// 192.168.13.13:1080/pac
+</code></pre>
+</div>
+
+
+		<p class="post-info">
+			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:2017-06-23 07:54:19</p>
+	</div>
+</article>
+
+<!-- <div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+					<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="induction.html">归纳的随想</a></div>
+						<div class="item-meta clearfix">
+														<div class="item-meta-ico bg-ico-image" style="background: url('../usr/themes/pinghsu/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+	                        							<div class="item-meta-cat"><a href="../category/thoughts/index.html">Thoughts</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+	</div>
+</div> -->
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!--liberxueconnnet-menu-->
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<!--liberxueconnnet-menu-->
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script >lang=hljs.initHighlightingOnLoad();</script>   
+ </body>
+</html>

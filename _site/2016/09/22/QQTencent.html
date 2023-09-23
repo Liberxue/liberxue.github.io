@@ -1,0 +1,573 @@
+
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+  <head>
+    <meta content='c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='title' />
+    <meta content='c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='og:title' />
+    <title>c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="腾讯官方通过 Tencent://Message/协议可以让QQ用户显示QQ/TM的在线状态发布在互联网上；并且点击 ，不用加好友也可以聊天：具体代码： &lt;a href="tencent://message/?uin=36394..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="腾讯官方通过 Tencent://Message/协议可以让QQ用户显示QQ/TM的在线状态发布在互联网上；并且点击 ，不用加好友也可以聊天：具体代码： &lt;a href="tencent://message/?uin=36394..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="腾讯官方通过 Tencent://Message/协议可以让QQ用户显示QQ/TM的在线状态发布在互联网上；并且点击 ，不用加好友也可以聊天：具体代码： &lt;a href="tencent://message/?uin=36394..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="腾讯官方通过 Tencent://Message/协议可以让QQ用户显示QQ/TM的在线状态发布在互联网上；并且点击 ，不用加好友也可以聊天：具体代码： &lt;a href="tencent://message/?uin=36394..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000/2016/09/22/QQTencent.html' property='og:url' />
+  <meta content="腾讯官方通过 Tencent://Message/协议可以让QQ用户显示QQ/TM的在线状态发布在互联网上；并且点击 ，不用加好友也可以聊天：具体代码： &lt;a href="tencent://message/?uin=36394..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="" gtools_scp_screen_capture_injected="true">
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                         
+            <a href="http://localhost:4000/">首页</a>
+                             
+            <a href="http://localhost:4000/book">书籍</a>
+                             
+            <a href="http://localhost:4000/road">旅游</a>
+                             
+            <a href="http://localhost:4000/archives">归档</a>
+                             
+            <a href="http://localhost:4000/tags">标签</a>
+                             
+            <a href="http://localhost:4000/about">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form id="cb-search-btn" role="search">
+         <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+        </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="http://localhost:4000/">首页</a></li>
+                            
+                <li><a href="http://localhost:4000/book">书籍</a></li>
+                            
+                <li><a href="http://localhost:4000/road">旅游</a></li>
+                            
+                <li><a href="http://localhost:4000/archives">归档</a></li>
+                            
+                <li><a href="http://localhost:4000/tags">标签</a></li>
+                            
+                <li><a href="http://localhost:4000/about">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="post-header-thumb bg-white}">
+	<div class="post-header-thumb-op"></div>
+	<div class="post-header-thumb">
+		<div class="post-header-thumb-container">
+    <h1 class="post-title" itemprop="name headline">
+	c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理</h1>
+		 <div class="post-data">  
+	 <time datetime="2016-09-22 00:00:00" itemprop="datePublished">发布时间：2016-09-22 00:00:00</time>
+     <a href="/tags#csharp" title="访问 csharp" data-hover="博客分类: csharp">博客分类: csharp</a>
+    <a href="#read"> 阅读次数: comments</a> 
+			</div>
+            <div class="post-tags">
+                
+      
+      
+       
+          <a href="/tags#tencent" title="访问tencent" data-hover="tencent">
+          tencent <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#HKEYCLASSES_ROOT" title="访问HKEYCLASSES_ROOT" data-hover="HKEYCLASSES_ROOT">
+          HKEYCLASSES_ROOT <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#网页启动QQ" title="访问网页启动QQ" data-hover="网页启动QQ">
+          网页启动QQ <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#chrome" title="访问chrome" data-hover="chrome">
+          chrome <span>(2)</span>
+          
+</a>
+       
+          <a href="/tags#chromium" title="访问chromium" data-hover="chromium">
+          chromium <span>(2)</span>
+          
+</a>
+      
+      
+      
+     
+	</div>
+</div>
+</div></div>
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			c#实现点击网页启动QQ,Tencent://Message/等协议的实现原理</h1>
+		<div class="post-data">
+				<time datetime="2016-09-22 00:00:00" itemprop="datePublished">2016-09-22 00:00:00</time>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+         <p class="post-tags">
+    
+      
+      
+       
+          <a href="/tags#tencent" title="访问tencent" data-hover="tencent">
+          tencent <span>(1)</span>
+          </a>
+       
+          <a href="/tags#HKEYCLASSES_ROOT" title="访问HKEYCLASSES_ROOT" data-hover="HKEYCLASSES_ROOT">
+          HKEYCLASSES_ROOT <span>(1)</span>
+          </a>
+       
+          <a href="/tags#网页启动QQ" title="访问网页启动QQ" data-hover="网页启动QQ">
+          网页启动QQ <span>(1)</span>
+          </a>
+       
+          <a href="/tags#chrome" title="访问chrome" data-hover="chrome">
+          chrome <span>(2)</span>
+          </a>
+       
+          <a href="/tags#chromium" title="访问chromium" data-hover="chromium">
+          chromium <span>(2)</span>
+          </a>
+      
+      
+      
+     
+</p>
+<p>腾讯官方通过 Tencent://Message/协议可以让QQ用户显示QQ/TM的在线状态发布在互联网上；并且点击 ，不用加好友也可以聊天：</p>
+<h5 id="具体代码">具体代码：</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> &lt;a href="tencent://message/?uin=363946651&amp;Site=oicqzone.com.com&amp;Menu=yes"&gt; 
+&lt;img border="0" SRC='http://wpa.qq.com/pa?p=1:363946651:3' alt="点击这里给我发消息"&gt; 
+&lt;/a&gt; 
+</code></pre>
+</div>
+
+<p>但它是如何实现的呢？下面文章以及微软官方说明详细解释了其工作原理：</p>
+
+<p>微软官方说明：http://msdn.microsoft.com/library/default.asp?url=/workshop/networking/pluggable/overview/appendix_a.asp
+Register protocol，此文中对于 Windows、Linux 和 OS X 操作系统如何注册协议都有说明。比如说 Windows，其实只需写入注册表，即可实现协议与执行程序的关联。例如腾讯的Tencent://Message协议注册表如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[HKEY_CLASSES_ROOT\TENCENT] 
+@=”TencentProtocol” 
+“URL Protocol”=”D:\\Program Files\\Tencent\\QQ\\liberxue.exe” 
+ 
+[HKEY_CLASSES_ROOT\TENCENT\DefaultIcon] 
+@=”D:\\Program Files\\Tencent\\QQ\\liberxue.exe,1″ 
+ 
+[HKEY_CLASSES_ROOT\TENCENT\shell] 
+ 
+[HKEY_CLASSES_ROOT\TENCENT\shell\open] 
+ 
+[HKEY_CLASSES_ROOT\TENCENT\shell\open\command] 
+@=”\”D:\\Program Files\\Tencent\\QQ\\liberxue.exe\” \”%1\”" 
+
+</code></pre>
+</div>
+
+<p>此注册表所实现的就是当浏览器（或其它）碰到 tencent://… 时，自动调用 liberxue.exe，并把 tencent://… 地址作为第一个参数传递给 liberxue.exe。</p>
+
+<h5 id="附程序代码">附程序代码：</h5>
+
+<p>在<code class="highlighter-rouge">Windows</code>中，协议注册由操作系统（OS）进行。例如，当您设置一个Web浏览器作为默认浏览器，操作系统将注册HTTP， HTTPS和FTP协议，并把它们与Web浏览器相关联; 当你打开一个<code class="highlighter-rouge">HTTP HTTPS</code>或<code class="highlighter-rouge">FTP</code>的邮件或从<code class="highlighter-rouge">Internet</code>快捷方式的链接，该URL将在您的默认浏览器中打开。同样，当你设置一个默认的邮件客户端，操作系统注册了的mailto协议，这样的mailto在浏览器中的相关邮件应用程序中打开链接。
+注： <code class="highlighter-rouge">Mozilla</code>套件/ <code class="highlighter-rouge">SeaMonkey</code>的集成邮件和浏览器功能，所以在一封电子邮件中说网络链接（例如，HTTP：//链接）将在<code class="highlighter-rouge">SeaMonkey</code>的浏览器窗口中打开和“电子邮件地址：”在网页中的链接将在SeaMonkey的邮件打开，且无需考虑操作系统的协议处理程序。
+其它协议可以注册并通过配置已安装的程序来处理的内容的外部应用程序相关联。例如，你可以设置RealPlayer中充当注册协议处理程序的RTSP URL的（实时流协议，以「内容- &gt;媒体类型“下的RealPlayer的偏好设置）。当你下次打开 <code class="highlighter-rouge">rtsp:// link</code>，<code class="highlighter-rouge">Firefox</code>或<code class="highlighter-rouge">Mozilla</code>套件/ <code class="highlighter-rouge">SeaMonkey</code>的会要求您确认外部协议请求之前，它会启动应用程序。
+也可以通过创建，如下.reg文件等，并在文件中把这个注册协议：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>REGEDIT4 
+ 
+[HKEY_CLASSES_ROOT\foo] 
+@="URL:foo Protocol" 
+"URL Protocol"="" 
+ 
+[HKEY_CLASSES_ROOT\foo\shell] 
+ 
+[HKEY_CLASSES_ROOT\foo\shell\open] 
+ 
+[HKEY_CLASSES_ROOT\foo\shell\open\command] 
+@="\"C:\\Program Files\\Application\\program.exe\" \"%1\""  
+
+</code></pre>
+</div>
+
+<p>更换与你指定的协议的C:\Program Files\Application\program.exe和你要运行的程序。需要注意的是反斜杠必须加倍和路径前附加斜线和报价不能除去。保存文件，然后双击它插入到Windows注册表。请参见注册应用程序到一个URL协议以获取更多信息。</p>
+
+<h5 id="linux所有版本的firefox需要安装特定的gnome库">Linux所有版本的Firefox（需要安装特定的GNOME库）</h5>
+<p>在终端中键入：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gconftool-2 -s /desktop/gnome/url-handlers/foo/command '/path/to/app %s' --type String 
+gconftool-2 -s /desktop/gnome/url-handlers/foo/enabled --type Boolean true 
+
+</code></pre>
+</div>
+
+<p>更换美孚在两条线上与您要注册的协议/路径/到/应用程序的路径，你要运行的应用程序。</p>
+
+<h5 id="firefox-35及以上">Firefox 3.5及以上</h5>
+
+<p>（工作时无需安装GNOME库）</p>
+
+<p>输入<code class="highlighter-rouge">about：config</code>警告到地址栏（地址栏），然后按Enter键。</p>
+
+<p>用鼠标右键单击- &gt;新建- &gt;布尔- &gt;名称：network.protocol-handler.expose.foo - &gt;价值- &gt; 假（更换美孚与你指定的协议）</p>
+
+<p>下一次当你点击的协议类型为foo，你会被要求的应用程序与打开一个链接。</p>
+
+<p>Firefox的版本高达3.0</p>
+
+<p>（工作时无需安装GNOME库）</p>
+
+<p>键入about：配置到地址栏（地址栏），然后按Enter键。</p>
+
+<p>用鼠标右键单击- &gt;新建- &gt;布尔- &gt;名称：network.protocol-handler.external.foo - &gt;价值- &gt; 真（更换美孚与你指定的协议）</p>
+
+<p>用鼠标右键单击- &gt;新建- &gt;字符串- &gt;名称：network.protocol-handler.app.foo - &gt;价值- &gt; /路径/到/应用程序（更换美孚的协议你指定和/路径/到/应用程序与路径的应用要运行）</p>
+
+<p>确保network.protocol-handler.expose，都被设置为true。</p>
+
+<p>MAC  Firefox的版本最高3.0：</p>
+
+<p>键入about：配置到地址栏，然后按Enter键。</p>
+
+<p>用鼠标右键单击- &gt;新建- &gt;布尔- &gt;名称：network.protocol-handler.external.foo - &gt;价值- &gt; 真（更换美孚与你指定的协议）</p>
+
+<p>用鼠标右键单击- &gt;新建- &gt;字符串- &gt;名称：network.protocol-handler.app.foo - &gt;价值- &gt; /路径/到/应用程序（更换美孚的协议你指定和/路径/到/应用程序与路径，你要运行的应用程序。</p>
+
+<p>确保network.protocol-handler.expose，都被设置为真。</p>
+
+<h5 id="故障排除">故障排除</h5>
+
+<p>（Linux和Mac），如果设置时的路径或名称不正确network.protocol-handler.app。（协议）的偏好，Firefox会显示一个错误说“协议（富）未与任何程序关联”。（错误312953）</p>
+
+<p>如果您收到一条消息，在Firefox的的mailto协议，不与任何程序关联，重新设置您的默认邮件客户端。</p>
+
+<p>某些不安全的协议，在默认情况下（忽略的bug 173010）。</p>
+
+
+		<p class="post-info">
+			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:2016-09-22 00:00:00</p>
+	</div>
+</article>
+
+<!-- <div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+					<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="induction.html">归纳的随想</a></div>
+						<div class="item-meta clearfix">
+														<div class="item-meta-ico bg-ico-image" style="background: url('../usr/themes/pinghsu/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+	                        							<div class="item-meta-cat"><a href="../category/thoughts/index.html">Thoughts</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+	</div>
+</div> -->
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!--liberxueconnnet-menu-->
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<!--liberxueconnnet-menu-->
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script >lang=hljs.initHighlightingOnLoad();</script>   
+ </body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+	  <meta http-equiv="x-dns-prefetch-control" content="on">   
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+	  <meta http-equiv="Cache-Control" content="no-siteapp"/>  
+    <title>LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="			      {% for posts in paginator.posts %}											           		             		{{ posts.content | strip_html | str..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content=" - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="			      {% for posts in paginator.posts %}											           		             		{{ posts.content | strip_html | str..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content=" - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="			      {% for posts in paginator.posts %}											           		             		{{ posts.content | strip_html | str..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="			      {% for posts in paginator.posts %}											           		             		{{ posts.content | strip_html | str..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000' property='og:url' />
+  <meta content="Full Stack独立开发者|欢迎来到 LiberXue「角落」侃侃理想、谈谈人生、敲敲代码。" property='og:description' />
+  <meta content="blog" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="bg-grey" gtools_scp_screen_capture_injected="true"><div id="MathJax_Message" style="display: none;"></div>
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                        
+            <a href="/?liberxue"  title="访问 首页" data-hover="首页">首页</a>
+                             
+            <a href="/book?liberxue"  title="访问 书籍" data-hover="书籍">书籍</a>
+                             
+            <a href="/road?liberxue"  title="访问 旅游" data-hover="旅游">旅游</a>
+                             
+            <a href="/archives?liberxue"  title="访问 归档" data-hover="归档">归档</a>
+                             
+            <a href="/tags?liberxue"  title="访问 标签" data-hover="标签">标签</a>
+                             
+            <a href="/about?liberxue"  title="访问 关于" data-hover="关于">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form method="post" action="/404.html" role="search">
+                <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+                </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="/?liberxue" title="访问 首页" data-hover="首页">首页</a></li>
+                            
+                <li><a href="/book?liberxue" title="访问 书籍" data-hover="书籍">书籍</a></li>
+                            
+                <li><a href="/road?liberxue" title="访问 旅游" data-hover="旅游">旅游</a></li>
+                            
+                <li><a href="/archives?liberxue" title="访问 归档" data-hover="归档">归档</a></li>
+                            
+                <li><a href="/tags?liberxue" title="访问 标签" data-hover="标签">标签</a></li>
+                            
+                <li><a href="/about?liberxue" title="访问 关于" data-hover="关于">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+
+      <main class="tl f6 relative pa4 pa5-ns overflow-hidden">
+        
+        <div class="markdown-body">
+          <div class="main-content index-page clearfix ">
+	<div class="post-lists">
+		<div class="post-lists-body">
+      
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('https://o243f9mnq.qnssl.com/2017/06/116099051.jpg');"></div>
+          	<a href="/2017/07/28/jserrorlog.html">
+	             <div class="item-desc">
+		<p>实现目的之前开发winfrom和前端交互时间开发工程一直预留了debug console（chormeF12）功能，但是很多时间在项目上线和用户使用过程难免会出现部分错误和异常想实现一个前端日志...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志"  data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#Javascript" title="访问 Javascript" data-hover="Javascript">Javascript</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-28 10:04">2017-07-28 10:04</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-22/62395302.jpg');"></div>
+          	<a href="/2017/07/23/vscodepython.html">
+	             <div class="item-desc">
+		<p>无聊学学Python周末实在无聊学学Python 大概看了下人们手册 貌似不难 语法很简单哈开始下载一个pycharm晕死。。。8G内存 风扇呼呼呼。。。。JetBrains是出精品啊，但是这性...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境"  data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#Python" title="访问 Python" data-hover="Python">Python</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-23 00:04">2017-07-23 00:04</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-16/78801196.jpg');"></div>
+          	<a href="/2017/07/19/nginxconf.html">
+	             <div class="item-desc">
+		<p>定义Nginx运行的用户和用户组user www www;nginx进程数，建议设置为等于CPU总核心数。worker_processes 8;全局错误日志定义类型，[ debug | info...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/19/nginxconf.html" title="访问 Nginx配置文件之nginx.conf详解笔记"  data-hover="Nginx配置文件之nginx.conf详解笔记">Nginx配置文件之nginx.conf详解笔记</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#nginx" title="访问 nginx" data-hover="nginx">nginx</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-19 19:02">2017-07-19 19:02</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-17/65813959.jpg');"></div>
+          	<a href="/2017/07/17/listhashlist.html">
+	             <div class="item-desc">
+		<p>什么是链表链表（Linked list）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针(Pointer)说到链表必须要说兰德下Ra...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表"  data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#linux内核" title="访问 linux内核" data-hover="linux内核">linux内核</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-17 08:45">2017-07-17 08:45</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-16/38390376.jpg');"></div>
+          	<a href="/2017/07/17/gitignore.html">
+	             <div class="item-desc">
+		<p>实现需求在git中如果想忽略掉某个文件或者文件夹，不想这个文件或者文件夹提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如无，则需自己手工建立此文件）。这个文件每一行保存...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势"  data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#git" title="访问 git" data-hover="git">git</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-17 07:45">2017-07-17 07:45</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('https://weread.qq.com/zh_CN/htmledition/images/download_hand_4x2740d2.png');"></div>
+          	<a href="/2017/07/13/wxread.html">
+	             <div class="item-desc">
+		<p>本来想今天早点写博客 好吧 过点 明天又要 修改下 GitHub https 也给小bug 显示我持续更新博客哈哈抓包工具：Charles抓包平台：Mac 10.12.6 Beta (16G24...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口"  data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#微信读书" title="访问 微信读书" data-hover="微信读书">微信读书</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-13 08:39">2017-07-13 08:39</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-blue" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-15/37542775.jpg');"></div>
+          	<a href="/2017/07/07/dockerkailinux.html">
+	             <div class="item-desc">
+		<p>首先声明下：docker和百度上那些各种闭着眼睛抄袭和抓取的文章真心是那啥啥。备忘下：Mac docker kail linux 安装踩过的坑建立一个Kali Linux Docker映像显然，...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-blue"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/07/dockerkailinux.html" title="访问 Mac docker kail linux 安装踩过的坑"  data-hover="Mac docker kail linux 安装踩过的坑">Mac docker kail linux 安装踩过的坑</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#docker" title="访问 docker" data-hover="docker">docker</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-07 00:00">2017-07-07 00:00</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-green" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-15/78939382.jpg');"></div>
+          	<a href="/2017/07/04/meilideshijie.html">
+	             <div class="item-desc">
+		<p>书中的美丽新世界，人不是父母生的，而是被培育出来的，人们没有照顾老人的烦恼，也没有婚姻的束缚，甚至不会变老，人们在六十岁的时候还像孩子一样青春靓丽。人们在几岁的时候就开始接受姓教育，成人以后任意...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-green"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考"  data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#书籍" title="访问 书籍" data-hover="书籍">书籍</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-04 07:13">2017-07-04 07:13</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-blue" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-15/48174506.jpg');"></div>
+          	<a href="/2017/07/04/waerdenghu.html">
+	             <div class="item-desc">
+		<p>这就是作者写瓦尔登湖的目的，他希望每人各显其面、各行其事，找到各自的独特性和价值取向，万千世界要有不一样的面貌，不一样的味道，人是，更应是。当我们看到和自身不同的观点、习俗、人、事、物，不是驳斥...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-blue"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签"  data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#书籍" title="访问 书籍" data-hover="书籍">书籍</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-04 07:13">2017-07-04 07:13</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://s.qdcdn.com/cl/13085757,800,450.jpg');"></div>
+          	<a href="/2017/07/03/tomcatmoredomain.html">
+	             <div class="item-desc">
+		<p>&lt;Connector port="8009" protocol="AJP/1.3" redirectPort="8443" /&gt;    &lt;Engine name="Catali...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/07/03/tomcatmoredomain.html" title="访问 linux环境tomcat多域名指向多项目server xml配置"  data-hover="linux环境tomcat多域名指向多项目server xml配置">linux环境tomcat多域名指向多项目server xml配置</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#tomcat" title="访问 tomcat" data-hover="tomcat">tomcat</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-07-03 07:04">2017-07-03 07:04</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://s.qdcdn.com/cl/10960818,800,450.jpg');"></div>
+          	<a href="/2017/06/30/serverss.html">
+	             <div class="item-desc">
+		<p>说明不建议使用一键脚本安装，除非你自己能维护其功能，否则安装时若出了问题很难查，而且现在有不少不明来历的一键脚本内嵌后门程序。此教程为单用户版，适合个人用户。如果你是站长，请查看多用户版教程：数...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/06/30/serverss.html" title="访问 Aws EC2+Ubuntu+ShadowsocksR服务端安装教程"  data-hover="Aws EC2+Ubuntu+ShadowsocksR服务端安装教程">Aws EC2+Ubuntu+ShadowsocksR服务端安装教程</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#ss" title="访问 ss" data-hover="ss">ss</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-06-30 07:54">2017-06-30 07:54</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-15/82431810.jpg');"></div>
+          	<a href="/2017/06/28/xuanhuanzuole.html">
+	             <div class="item-desc">
+		<p>背景来源《寻欢作乐》，并不是专门为了描述爱德华·德里菲尔德和阿尔罗伊·基尔这两个人物。年轻的时候，我跟本书中我称作罗西的那个年轻女人关系十分密切。她有重大的、令人恼怒的过错，但是她长得很美，人也...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签"  data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#书籍" title="访问 书籍" data-hover="书籍">书籍</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-06-28 07:43">2017-06-28 07:43</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-17/89166189.jpg');"></div>
+          	<a href="/2017/06/27/sikaobook.html">
+	             <div class="item-desc">
+		<p>      晚饭后，我常常有跑步的习惯。坚持跑步让我感到精力充沛，既能保持精神的专注度，又利于提高身体的感应能力。我喜欢一边跑着一边思考，想一些简单的问题，总结一天的经历。快跑的时候并不适合想一...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢"  data-hover="思考快与慢">思考快与慢</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#书籍" title="访问 书籍" data-hover="书籍">书籍</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-06-27 00:00">2017-06-27 00:00</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-16/94933467.jpg');"></div>
+          	<a href="/2017/06/24/netcore.html">
+	             <div class="item-desc">
+		<p>.NET Core 2017试水哈什么是.NET Core项目地址： .NET Core.NET Platform 是一个windows上的一个开发平台规范总称， 刚开始只有windows上的....</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/06/24/netcore.html" title="访问 .NET Core 2017试水哈"  data-hover=".NET Core 2017试水哈">.NET Core 2017试水哈</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#csharp" title="访问 csharp" data-hover="csharp">csharp</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-06-24 00:00">2017-06-24 00:00</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+		<div class="post-list-item">
+				<div class="post-list-item-container">
+					 <div class="item-thumb  bg-" style="background-image:url('http://ot1cc1u9t.bkt.clouddn.com/17-7-17/53215514.jpg');"></div>
+          	<a href="/2017/06/23/awsss.html">
+	             <div class="item-desc">
+		<p>免费AWS      Amazon EC2= 亚马逊弹性计算云。早听说Amazon是良心企业，今天才终于用上。EC2只是AWS一年期免费套餐中的一种服务，30G的SSD存储空间和每月15G的流量...</p>
+						</div>
+					</a>
+					<div class="item-slant reverse-slant  bg-"></div>
+					<div class="item-slant"></div>
+					<div class="item-label">
+						<div class="item-title"><a href="/2017/06/23/awsss.html" title="访问 Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss"  data-hover="Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss">Aws EC2+Ubuntu+shadowsocks搭建自己多节点梯子ss</a></div>
+						<div class="item-meta clearfix">
+						<div class="item-meta-ico bg-ico-book" style="background: url('stylesheets/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+             <div class="item-meta-cat">
+				 <a href="/tags#ss" title="访问 ss" data-hover="ss">ss</a>
+				 <a href="/archives#2017" title="访问 2017" data-hover="2017-06-23 07:54">2017-06-23 07:54</a></div>
+						</div>
+					</div>
+				</div>
+      </div>
+       
+	</div>
+	</div>
+  <!-- 分页链接 -->
+       <div class="lists-navigator clearfix">   
+         <ol class="page-navigator">
+        <li class="current">
+            <a href="/?liberxue" data-hover="首页">
+                <span>首页</span>
+            </a>
+        </li>
+        <li class="current">
+        
+            <span>&laquo;</span>
+        
+        </li>
+        
+            
+        <li class="current">
+            
+            
+            <a href="/?liberxue" data-hover="1">1</a>
+            
+        </li>
+        
+            
+        <li>
+            
+            
+            <a href="/liberxuepage2?liberxue" data-hover="2">2</a>
+            
+        </li>
+        
+            
+        <li>
+            
+            
+            <a href="/liberxuepage3?liberxue" data-hover="3">3</a>
+            
+        </li>
+        
+        <li class="current">
+            
+            <a href="/liberxuepage2?liberxue" data-hover="&raquo;">
+                <span>&raquo;</span>
+            </a>
+            
+        </li>
+        <li>
+            <a href="/liberxuepage3?liberxue" data-hover="末页">
+                <span>末页</span>
+            </a>
+        </li>
+        <li class="current">
+            <span>第1页 / 共3页</span>
+      </ol> 
+        
+  </div>
+
+        </div>
+        
+      </main>
+      
+    </div>
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：45篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  </body>
+</html>

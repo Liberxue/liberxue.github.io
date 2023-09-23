@@ -1,0 +1,542 @@
+
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+  <head>
+    <meta content='web爬虫之识别PhantomJs识别 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='title' />
+    <meta content='web爬虫之识别PhantomJs识别 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog' name='og:title' />
+    <title>web爬虫之识别PhantomJs识别 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+    <!--                                                                                                                                                    
+                               bbbbbbbb                                                                                                            
+LLLLLLLLLLL               iiii b::::::b                                                 XXXXXXX       XXXXXXX                                      
+L:::::::::L              i::::ib::::::b                                                 X:::::X       X:::::X                                      
+L:::::::::L               iiii b::::::b                                                 X:::::X       X:::::X                                      
+LL:::::::LL                     b:::::b                                                 X::::::X     X::::::X                                      
+  L:::::L               iiiiiii b:::::bbbbbbbbb        eeeeeeeeeeee    rrrrr   rrrrrrrrrXXX:::::X   X:::::XXXuuuuuu    uuuuuu      eeeeeeeeeeee    
+  L:::::L               i:::::i b::::::::::::::bb    ee::::::::::::ee  r::::rrr:::::::::r  X:::::X X:::::X   u::::u    u::::u    ee::::::::::::ee  
+  L:::::L                i::::i b::::::::::::::::b  e::::::eeeee:::::eer:::::::::::::::::r  X:::::X:::::X    u::::u    u::::u   e::::::eeeee:::::ee
+  L:::::L                i::::i b:::::bbbbb:::::::be::::::e     e:::::err::::::rrrrr::::::r  X:::::::::X     u::::u    u::::u  e::::::e     e:::::e
+  L:::::L                i::::i b:::::b    b::::::be:::::::eeeee::::::e r:::::r     r:::::r  X:::::::::X     u::::u    u::::u  e:::::::eeeee::::::e
+  L:::::L                i::::i b:::::b     b:::::be:::::::::::::::::e  r:::::r     rrrrrrr X:::::X:::::X    u::::u    u::::u  e:::::::::::::::::e 
+  L:::::L                i::::i b:::::b     b:::::be::::::eeeeeeeeeee   r:::::r            X:::::X X:::::X   u::::u    u::::u  e::::::eeeeeeeeeee  
+  L:::::L         LLLLLL i::::i b:::::b     b:::::be:::::::e            r:::::r         XXX:::::X   X:::::XXXu:::::uuuu:::::u  e:::::::e           
+LL:::::::LLLLLLLLL:::::Li::::::ib:::::bbbbbb::::::be::::::::e           r:::::r         X::::::X     X::::::Xu:::::::::::::::uue::::::::e          
+L::::::::::::::::::::::Li::::::ib::::::::::::::::b  e::::::::eeeeeeee   r:::::r         X:::::X       X:::::X u:::::::::::::::u e::::::::eeeeeeee  
+L::::::::::::::::::::::Li::::::ib:::::::::::::::b    ee:::::::::::::e   r:::::r         X:::::X       X:::::X  uu::::::::uu:::u  ee:::::::::::::e  
+LLLLLLLLLLLLLLLLLLLLLLLLiiiiiiiibbbbbbbbbbbbbbbb       eeeeeeeeeeeeee   rrrrrrr         XXXXXXX       XXXXXXX    uuuuuuuu  uuuu    eeeeeeeeeeeeee                                                                                                                                                                                                                                                                                                   
+!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>web爬虫之识别PhantomJs识别 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog</title>
+  <meta name="description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author"  content="如今web爬虫技术日趋成熟,国内大大小小的技术团队都开始尝试PhantomJs.现在的web技术领域,客户端js大行其道,页面异步加载信息已成为家常便饭,用PhantomJs做爬虫的一大好处是解决了前端异步加载的资源无法被爬虫抓取的问..." property='og:description' />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="web爬虫之识别PhantomJs识别 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta name="twitter:description"  content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:keywords"  content="如今web爬虫技术日趋成熟,国内大大小小的技术团队都开始尝试PhantomJs.现在的web技术领域,客户端js大行其道,页面异步加载信息已成为家常便饭,用PhantomJs做爬虫的一大好处是解决了前端异步加载的资源无法被爬虫抓取的问..." property='og:description' />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="web爬虫之识别PhantomJs识别 - LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog">
+  <meta property="og:description" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="og:keywords"  content="如今web爬虫技术日趋成熟,国内大大小小的技术团队都开始尝试PhantomJs.现在的web技术领域,客户端js大行其道,页面异步加载信息已成为家常便饭,用PhantomJs做爬虫的一大好处是解决了前端异步加载的资源无法被爬虫抓取的问..." property='og:description' />
+  <meta name="theme-Jekyll by liberxue" content="#eb5055"> 
+  <link rel="icon" type="image/png" href="http://localhost:4000/stylesheets/favicons/favicon.ico" />
+  <link href="http://localhost:4000/stylesheets/favicons/favicon.ico" rel="shortcut icon" type="image/png">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Liberxue" href="http://localhost:4000/feed.xml">
+  <meta charset="UTF-8">  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="http://localhost:4000/stylesheets/favicons/favicon.ico" type="image/x-icon">
+  <meta name="keywords"  content="如今web爬虫技术日趋成熟,国内大大小小的技术团队都开始尝试PhantomJs.现在的web技术领域,客户端js大行其道,页面异步加载信息已成为家常便饭,用PhantomJs做爬虫的一大好处是解决了前端异步加载的资源无法被爬虫抓取的问..." property='og:description' />
+  <meta name="description" content="nothing is more practicla than a good theory" />
+  <link href="https://cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+  <link href="http://localhost:4000/stylesheets/style-vlpismine.css" rel="stylesheet">
+
+  <meta content='http://localhost:4000/2016/06/15/phantomJs.html' property='og:url' />
+  <meta content="如今web爬虫技术日趋成熟,国内大大小小的技术团队都开始尝试PhantomJs.现在的web技术领域,客户端js大行其道,页面异步加载信息已成为家常便饭,用PhantomJs做爬虫的一大好处是解决了前端异步加载的资源无法被爬虫抓取的问..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101222464-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </head>
+<body class="" gtools_scp_screen_capture_injected="true">
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog" class="navbar-logo"> <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png" alt="LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"> </a>
+        <div class="navbar-menu">
+                         
+            <a href="http://localhost:4000/">首页</a>
+                             
+            <a href="http://localhost:4000/book">书籍</a>
+                             
+            <a href="http://localhost:4000/road">旅游</a>
+                             
+            <a href="http://localhost:4000/archives">归档</a>
+                             
+            <a href="http://localhost:4000/tags">标签</a>
+                             
+            <a href="http://localhost:4000/about">关于</a>
+                
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form id="cb-search-btn" role="search">
+         <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+        </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                          
+                <li><a href="http://localhost:4000/">首页</a></li>
+                            
+                <li><a href="http://localhost:4000/book">书籍</a></li>
+                            
+                <li><a href="http://localhost:4000/road">旅游</a></li>
+                            
+                <li><a href="http://localhost:4000/archives">归档</a></li>
+                            
+                <li><a href="http://localhost:4000/tags">标签</a></li>
+                            
+                <li><a href="http://localhost:4000/about">关于</a></li>
+                 
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="post-header-thumb bg-white}">
+	<div class="post-header-thumb-op"></div>
+	<div class="post-header-thumb">
+		<div class="post-header-thumb-container">
+    <h1 class="post-title" itemprop="name headline">
+	web爬虫之识别PhantomJs识别</h1>
+		 <div class="post-data">  
+	 <time datetime="2016-06-15 06:54:32" itemprop="datePublished">发布时间：2016-06-15 06:54:32</time>
+     <a href="/tags#PhantomJs" title="访问 PhantomJs" data-hover="博客分类: PhantomJs">博客分类: PhantomJs</a>
+    <a href="#read"> 阅读次数: comments</a> 
+			</div>
+            <div class="post-tags">
+                
+      
+      
+       
+          <a href="/tags#PhantomJs识别" title="访问PhantomJs识别" data-hover="PhantomJs识别">
+          PhantomJs识别 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#PhantomJs" title="访问PhantomJs" data-hover="PhantomJs">
+          PhantomJs <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#web" title="访问web" data-hover="web">
+          web <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#web爬虫" title="访问web爬虫" data-hover="web爬虫">
+          web爬虫 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#爬虫" title="访问爬虫" data-hover="爬虫">
+          爬虫 <span>(1)</span>
+          
+</a>
+       
+          <a href="/tags#PhantomJs爬虫" title="访问PhantomJs爬虫" data-hover="PhantomJs爬虫">
+          PhantomJs爬虫 <span>(1)</span>
+          
+</a>
+      
+      
+      
+     
+	</div>
+</div>
+</div></div>
+<article class="main-content post-page" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			web爬虫之识别PhantomJs识别</h1>
+		<div class="post-data">
+				<time datetime="2016-06-15 06:54:32" itemprop="datePublished">2016-06-15 06:54:32</time>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+         <p class="post-tags">
+    
+      
+      
+       
+          <a href="/tags#PhantomJs识别" title="访问PhantomJs识别" data-hover="PhantomJs识别">
+          PhantomJs识别 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#PhantomJs" title="访问PhantomJs" data-hover="PhantomJs">
+          PhantomJs <span>(1)</span>
+          </a>
+       
+          <a href="/tags#web" title="访问web" data-hover="web">
+          web <span>(1)</span>
+          </a>
+       
+          <a href="/tags#web爬虫" title="访问web爬虫" data-hover="web爬虫">
+          web爬虫 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#爬虫" title="访问爬虫" data-hover="爬虫">
+          爬虫 <span>(1)</span>
+          </a>
+       
+          <a href="/tags#PhantomJs爬虫" title="访问PhantomJs爬虫" data-hover="PhantomJs爬虫">
+          PhantomJs爬虫 <span>(1)</span>
+          </a>
+      
+      
+      
+     
+</p>
+<p>如今web爬虫技术日趋成熟,国内大大小小的技术团队都开始尝试PhantomJs.</p>
+
+<p>现在的<code class="highlighter-rouge">web</code>技术领域,客户端js大行其道,页面异步加载信息已成为家常便饭,用PhantomJs做爬虫的一大好处是解决了前端异步加载的资源无法被爬虫抓取的问题.</p>
+
+<p>然而这也给很多具有版权保护问题的网站带来了困扰,强大的PhantomJs让野爬机器人如虎添翼, 如果说之前还能通过ajax异步加载信息保护自己的页面内容不被野爬轻易抄袭转载的话,现如今一旦遇到PhantomJs就束手无策了.</p>
+
+<p>无论是小说网站,新闻网站,亦或是个人博客都面临着被PhantomJs爬虫非法抓取和抄袭转载的风险,那么PhantomJs客户端能否被我们识别出来呢?</p>
+
+<p>首先,在服务端收到http请求时,PhantomJs发出的请求就具有明显的特征,我们先来看看一个</p>
+
+<ul>
+  <li>普通的http请求:</li>
+</ul>
+
+<p><img src="http://www.liberxue.com/images/b8-p1.png" alt="普通的http请求" /></p>
+
+<p>再来看看同样情况下服务端收到的</p>
+
+<ul>
+  <li><code class="highlighter-rouge">PhantomJs</code>客户端发出的<code class="highlighter-rouge">http请求</code>:</li>
+</ul>
+
+<p><img src="http://www.liberxue.com/images/b8-p2.png" alt="PhantomJs客户端发出的http请求" /></p>
+
+<h5 id="仔细观察对比不难发现phantomjs具有如下特征">仔细观察对比不难发现,PhantomJs具有如下特征:</h5>
+
+<ol>
+  <li>
+    <p>请求头中的<code class="highlighter-rouge">Host</code>是位于最后的;</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Connection</code>字段的每个单词首字母都是大写的(<code class="highlighter-rouge">Keep-Alive</code>),而正常的浏览器客户端只有第一个单词是首字母大写(Keep-alive);</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Accept-Encoding</code>的值是<code class="highlighter-rouge">gzip</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">User-Agent</code>里面包含有<code class="highlighter-rouge">PhantomJs</code>的签名,不过这一条<code class="highlighter-rouge">PhantomJs</code>客户端是可以修改的.</p>
+  </li>
+</ol>
+
+<p>前三条特征之所以会存在,主要的原因是PhantomJs是用著名的C++框架Qt开发的,而Qt框架的网络栈的实现具有以上的特征.</p>
+
+<p>通过以上几点特征,我们可以在服务端controller/action层对客户端情况做一个初步的检测,把PhantomJs客户端的http请求拒绝掉.</p>
+
+<p>然后再说说在客户端js代码中如何检测PhantomJs:</p>
+
+<p>因为<code class="highlighter-rouge">userAgent</code>字段是可以修改的,所以对<code class="highlighter-rouge">ua</code>的判断我们就不说了,说点修改成本高或者根本不能修改的PhantomJs客户端特征.</p>
+
+<p>首先是<code class="highlighter-rouge">Plugins</code>,对于浏览器中<code class="highlighter-rouge">navigator.plugins</code>对象来说,一般至少都会包含以下值:<code class="highlighter-rouge">Flash</code>,<code class="highlighter-rouge">ActiveX</code>, <code class="highlighter-rouge">Java applets</code>支持以及一个叫做”<code class="highlighter-rouge">Default Browser Helper</code>“,这是一个在OSX系统中用来判断当前浏览器是否被系统设为默认浏览器的插件. 多数正常安装的浏览器客户端都会至少包含以上插件中的一到两个,即使是移动端浏览器.</p>
+
+<p>不同的是,在PhantomJs客户端中是没有任何plugin的,并且它目前的官方文档中也没有提供任何添加plugin的方法.因此对于plugin方面PhantomJs客户端 要把自己伪装成和正常浏览器一模一样的特征成本较高.</p>
+
+<h5 id="js可以放在客户端脚本中对phantomjs进行判断">js可以放在客户端脚本中对PhantomJs进行判断:</h5>
+
+<p><img src="http://www.liberxue.com/images/b8-p3.png" alt="客户端脚本中对PhantomJs进行判断" /></p>
+
+<p>然而<code class="highlighter-rouge">PhantomJs</code>如果一定要在<code class="highlighter-rouge">plugin</code>方面模仿一个正常的浏览器也不是不可能,因为Qt框架也是提供了一套<code class="highlighter-rouge">native Api</code>来实现<code class="highlighter-rouge">plugin</code>的, 真要做的话也只是一个开发成本的问题.</p>
+
+<p>另外的一个可以作为判断客户端的思路是利用alert弹窗的用户响应时间进行判断,来看看下面这段代码:</p>
+
+<p><img src="http://www.liberxue.com/images/b8-p3.png" alt="alert弹窗的用户响应时间进行判断" /></p>
+
+<p>另外,<code class="highlighter-rouge">PhantomJs</code>客户端中有两个全局变量,<code class="highlighter-rouge">window.callPhantom</code>和<code class="highlighter-rouge">window._phantom</code>,但有消息表明这两个值在未来很可能会发生改变.</p>
+
+<p><code class="highlighter-rouge">PhantomJs</code>还有一个弱点是,由于1.x和2.x版本的Phantom使用了较为过时的WebKit引擎,例如<code class="highlighter-rouge">PhantomJs 1.x</code>版本中<code class="highlighter-rouge">Function.prototype.bind</code>是不存在的, 但依据这一点不足以判断PhantomJs客户端,因为这很可能会误伤使用者低版本IE浏览器的正常用户</p>
+
+<p>除此之外<code class="highlighter-rouge">PhantomJs</code>的<code class="highlighter-rouge">Error</code>异常捕获方面也有些文章可做,不过我认为这方面同样有可能导致误伤正常用户,毕竟我不能确定所有正常的浏览器都不具备这样的特征.</p>
+
+
+		<p class="post-info">
+			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:2016-06-15 06:54:32</p>
+	</div>
+</article>
+
+<!-- <div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+					<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="induction.html">归纳的随想</a></div>
+						<div class="item-meta clearfix">
+														<div class="item-meta-ico bg-ico-image" style="background: url('../usr/themes/pinghsu/images/bg-ico.png') no-repeat;background-size: 40px auto;"></div>
+	                        							<div class="item-meta-cat"><a href="../category/thoughts/index.html">Thoughts</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+				</div>
+	</div>
+</div> -->
+<footer class="footer bg-white">
+	<div class="footer-social">
+		<div class="footer-container clearfix">
+			<div class="social-list">
+	 <a class="social segmentfault" target="blank" href="https://segmentfault.com/u/liberxue" title="访问 LiberXue_Twitter" data-hover="Segmentfault">Segmentfault</a>
+    <a class="social github" target="blank" href="https://github.com/liberxue" title="访问 LiberXue_Twitter" data-hover="GitHub">GitHub</a>
+    <a class="social twitter" target="blank" href="http://twitter.com/liberxue" title="访问 LiberXue_Twitter" data-hover="Twitter">Twitter</a>
+     <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/6902190/liberxue" title="访问 LiberXue_stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+          <a class="social oschina" target="blank" href="https://my.oschina.net/bolanzw" title="访问 LiberXue_Oschina" data-hover="Oschina">Oschina</a>
+     <a class="social rss" target="blank" href="/feed.xml"title="访问 LiberXue_RSS" data-hover="RSS">RSS</a>
+	</div>
+		</div>
+	</div>
+	<div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                         <img src="http://localhost:4000/stylesheets/images/logo-liberxue.png"   title="访问 LiberXue_blog" data-hover="LiberXue_blog" alt="LiberXue_blog" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/liberxue" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                        <p>Powered by <a href="http://localhost:4000/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank" rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2017 <a href="/feed.xml"  title="访问 liberxue blog RSS" data-hover="liberxue blog RSS">liberxue blog RSS</a></p>
+                        <p>总计文章：篇</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">置顶文章</h3>
+     <!--置顶-->
+    
+      
+      <li><a href="/2017/07/28/jserrorlog.html" title="访问 c#交互JavaScript开发建立捕获前端错误日志" data-hover="c#交互JavaScript开发建立捕获前端错误日志">c#交互JavaScript开发建立捕获前端错误日志</a></li>
+      
+    
+      
+      <li><a href="/2017/07/23/vscodepython.html" title="访问 两分钟vscode在Mac安装Python环境" data-hover="两分钟vscode在Mac安装Python环境">两分钟vscode在Mac安装Python环境</a></li>
+      
+    
+      
+    
+      
+      <li><a href="/2017/07/17/listhashlist.html" title="访问 Linux双向链表和hash链表单向链表" data-hover="Linux双向链表和hash链表单向链表">Linux双向链表和hash链表单向链表</a></li>
+      
+    
+      
+      <li><a href="/2017/07/17/gitignore.html" title="访问 Git忽略规则及.gitignore规则正确姿势" data-hover="Git忽略规则及.gitignore规则正确姿势">Git忽略规则及.gitignore规则正确姿势</a></li>
+      
+    
+      
+      <li><a href="/2017/07/13/wxread.html" title="访问 微信读书协议分析|和搜索查询数据接口" data-hover="微信读书协议分析|和搜索查询数据接口">微信读书协议分析|和搜索查询数据接口</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+        <!--置顶-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新文章</h3>
+          
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/07/04/meilideshijie.html" title="访问 《美丽新世界》之幸福和自由思考" data-hover="《美丽新世界》之幸福和自由思考">《美丽新世界》之幸福和自由思考</a></li>
+      
+            
+      
+ <li><a href="/2017/07/04/waerdenghu.html" title="访问 瓦尔登湖liberxue一些所感所想和笔记书签" data-hover="瓦尔登湖liberxue一些所感所想和笔记书签">瓦尔登湖liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+            
+      
+            
+      
+ <li><a href="/2017/06/28/xuanhuanzuole.html" title="访问 毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签" data-hover="毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签">毛姆《寻欢作乐》（百读文库）liberxue一些所感所想和笔记书签</a></li>
+      
+            
+      
+ <li><a href="/2017/06/27/sikaobook.html" title="访问 思考快与慢" data-hover="思考快与慢">思考快与慢</a></li>
+      
+            
+      
+    
+</div>
+		</div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+$(function () {
+    setTimeout(function () {
+      $('code').removeClass('hljs');
+      $('code').removeClass('language');
+    }, 90);
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!--liberxueconnnet-menu-->
+<div id="directory-content" class="directory-content">
+    <div id="directory"></div>
+</div>
+<!--liberxueconnnet-menu-->
+<script>
+var postDirectoryBuild = function() {
+    var postChildren = function children(childNodes, reg) {
+        var result = [],
+            isReg = typeof reg === 'object',
+            isStr = typeof reg === 'string',
+            node, i, len;
+        for (i = 0, len = childNodes.length; i < len; i++) {
+            node = childNodes[i];
+            if ((node.nodeType === 1 || node.nodeType === 9) &&
+                (!reg ||
+                isReg && reg.test(node.tagName.toLowerCase()) ||
+                isStr && node.tagName.toLowerCase() === reg)) {
+                result.push(node);
+            }
+        }
+        return result;
+    },
+    createPostDirectory = function(article, directory, isDirNum) {
+        var contentArr = [],
+            titleId = [],
+            levelArr, root, level,
+            currentList, list, li, link, i, len;
+        levelArr = (function(article, contentArr, titleId) {
+            var titleElem = postChildren(article.childNodes, /^h\d$/),
+                levelArr = [],
+                lastNum = 1,
+                lastRevNum = 1,
+                count = 0,
+                guid = 1,
+                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+                lastRevNum, num, elem;
+            while (titleElem.length) {
+                elem = titleElem.shift();
+                contentArr.push(elem.innerHTML);
+                num = +elem.tagName.match(/\d/)[0];
+                if (num > lastNum) {
+                    levelArr.push(1);
+                    lastRevNum += 1;
+                } else if (num === lastRevNum ||
+                    num > lastRevNum && num <= lastNum) {
+                    levelArr.push(0);
+                    lastRevNum = lastRevNum;
+                } else if (num < lastRevNum) {
+                    levelArr.push(num - lastRevNum);
+                    lastRevNum = num;
+                }
+                count += levelArr[levelArr.length - 1];
+                lastNum = num;
+                elem.id = elem.id || (id + guid++);
+                titleId.push(elem.id);
+            }
+            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+
+            return levelArr;
+        })(article, contentArr, titleId);
+        currentList = root = document.createElement('ul');
+        dirNum = [0];
+        for (i = 0, len = levelArr.length; i < len; i++) {
+            level = levelArr[i];
+            if (level === 1) {
+                list = document.createElement('ul');
+                if (!currentList.lastElementChild) {
+                    currentList.appendChild(document.createElement('li'));
+                }
+                currentList.lastElementChild.appendChild(list);
+                currentList = list;
+                dirNum.push(0);
+            } else if (level < 0) {
+                level *= 2;
+                while (level++) {
+                    if (level % 2) dirNum.pop();
+                    currentList = currentList.parentNode;
+                }
+            }
+            dirNum[dirNum.length - 1]++;
+            li = document.createElement('li');
+            link = document.createElement('a');
+            link.href = '#' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.title = '访问' + titleId[i];
+            link.innerHTML = !isDirNum ? contentArr[i] :
+                dirNum.join('.') + ' ' + contentArr[i] ;
+            li.appendChild(link);
+            currentList.appendChild(li);
+        }
+        directory.appendChild(root);
+    };
+    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+};
+postDirectoryBuild();
+</script>
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script >lang=hljs.initHighlightingOnLoad();</script>   
+ </body>
+</html>
