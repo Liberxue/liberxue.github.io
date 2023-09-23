@@ -1,49 +1,33 @@
-#### liberxue.github.io demo [查看](https://liberxue.github.io/)
+👏  欢迎使用 **潇洒空间** ！  
+✍️  **潇洒空间** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... 
 
+<!-- more -->
 
-`Jekyll Themes`
-----------
-  
-### Jekyll轻量级极简博客
+[Github](https://github.com/yxcqr/yxcqr.github.io)  
 
-#### 第一步是点击[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
-##### 第二步: 修改_config.yml 中的url 为您的域名
-#### OK 好了  就这么简单  
-#### 我不要任何版权也不需要您在捐款，帮忙star下 一个🌟 谢谢 😄
-- [x] 自动生成标签
-- [x] 自动生成json搜索
-- [x] 自适应模板
-- [x] 自动生成feed.xml
-- [x] 自动生成分页
-- [x] 修改_config.yml 的links 为您的菜单
-- [x] 修改_config.yml  的paginate 为您的按照多少页分页
+## 特性👇
+📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  
 
-![uiliberxue](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/ui.jpg) 
- 
- ----------
-![博客搜索](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/01.gif) 
+🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  
 
-轻量级 最小blog 
-第一步: 点击[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
- 
-----
+🏷️  你可以对文章进行标签分组  
 
-![fork操作](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/02.gif)
-  
-  
+📋  你可以自定义菜单，甚至可以创建外部链接菜单  
 
+💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  
 
-第二步: 修改_config.yml 中的url 为您的域名
+🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  
 
-![修改_config.yml 中的url 为您的域名](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/04.gif)
-  
+🇬🇧  你可以使用**中文简体**或**英语**  
 
+🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  
 
+🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  
 
+🌱 当然 **潇洒空间** 还很年轻，有很多不足，但请相信，它会不停向前 🏃
 
-* [提交Issues](https://github.com/Liberxue/liberxue.github.io/issues)
- 
-* [发邮件](mailto:liberxue@gmail.com)
- 
-* [Twitter](https://twitter.com/liberxue).
+未来，它一定会成为你离不开的伙伴
 
+尽情发挥你的才华吧！
+
+😘 Enjoy~

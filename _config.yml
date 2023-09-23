@@ -1,10 +1,10 @@
 # ----------- CONFIGURABLE START -----------
-title:            "LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"
-description:      "Full Stack独立开发者|欢迎来到 LiberXue「角落」侃侃理想、谈谈人生、敲敲代码。"
-url:              https://liberxue.github.io # 域名
-signoff:          "LiberXue" # Your name
+title:            "潇洒空间个人博客"
+description:      "一个网络资源整合分享的自由人"
+url:              https://xs.xsvip999.eu.org/ # 域名
+signoff:          "潇洒" # Your name
 facebook_appid:   #liberxue
-google_analytics: UA-101222464-1
+google_analytics: yxcqr
 share:            true 
 # 分页
 paginate: 15
