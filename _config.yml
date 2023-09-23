@@ -15,7 +15,7 @@ links:
     url:          /
     external:     false
   - name:         分享
-    url:          /fengxiang
+    url:          /fenxiang
     external:     false
   - name:         学习
     url:          /xuexi
