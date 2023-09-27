@@ -16,13 +16,14 @@ HashCalculator
 开源地址；https://github.com/hrpzcf/HashCalculator
 
 文件哈希值批量计算器 (HashCalculator)
-[1]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/1.png![图1][1]
+[1]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/1.png
+![图1][1]
 软件简介
 本软件主要是为了批量计算、批量校验文件的哈希值而设计，减少批量计算、校验、统计的麻烦。
 用来计算单个文件的哈希值也很方便。
 本软件是开源软件，遵守 GNU General Public License v3.0 开源协议，源代码托管在 GitHub 和 Gitee 上。
-[2]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/2.png![图2][2]
-  
+[2]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/2.png
+![图2][2]
 功能特点
 支持的哈希算法有：SHA1、SHA224、SHA256、SHA384、SHA512、SHA3 系列、MD5、Blake2b 系列、Blake2s 系列、Blake3 系列、Whirlpool。
 计算所得哈希值的输出方式可选择 Base64 或十六进制大/小写。
@@ -35,7 +36,8 @@ HashCalculator
 支持把计算所得的结果导出为文本文件，可选 .txt 扩展名或 .hcb 扩展名，其中 .hcb 扩展名的文件支持直接双击自动打开 HashCalculator 进行校验(在设置中打开了文件关联后)。
 其他未列出的功能...
 
-[3]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/3.png![图3][3]
+[3]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/3.png
+![图3][3]
 适用用户
 需要对文件夹下大量文件名混乱的文件计算哈希值以找出相同文件的用户
 需要快速对一批文件生成哈希值并发布的用户
