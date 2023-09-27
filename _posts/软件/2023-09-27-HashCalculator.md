@@ -1,7 +1,7 @@
 ---
 layout: blog
 tool: true
-title:  "就是测试新增加文章"
+title:  "文件哈希值批量计算器 (HashCalculator)"
 background: green
 background-image: http://ot1cc1u9t.bkt.clouddn.com/17-7-15/78939382.jpg
 date:   2023-09-27 09:59:54
