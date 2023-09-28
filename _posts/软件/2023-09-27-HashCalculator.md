@@ -16,12 +16,14 @@ tags:
 
 [1]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/1.png
 ![图1][1]
+
 软件简介
 本软件主要是为了批量计算、批量校验文件的哈希值而设计，减少批量计算、校验、统计的麻烦。
 用来计算单个文件的哈希值也很方便。
 本软件是开源软件，遵守 GNU General Public License v3.0 开源协议，源代码托管在 GitHub 和 Gitee 上。
 [2]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/2.png
 ![图2][2]
+
 功能特点
 支持的哈希算法有：SHA1、SHA224、SHA256、SHA384、SHA512、SHA3 系列、MD5、Blake2b 系列、Blake2s 系列、Blake3 系列、Whirlpool。
 计算所得哈希值的输出方式可选择 Base64 或十六进制大/小写。
