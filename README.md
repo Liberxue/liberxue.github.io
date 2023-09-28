@@ -1,70 +1,53 @@
-                .::         .::                       .::      .::                 
-                .::       .:.::                        .::   .::                    
-                .::         .::         .::    .: .:::  .:: .::   .::  .::   .::    
-                .::      .::.:: .::   .:   .::  .::       .::     .::  .:: .:   .:: 
-                .::      .::.::   .::.::::: .:: .::     .:: .::   .::  .::.::::: .::
-                .::      .::.::   .::.:         .::    .::   .::  .::  .::.:        
-                .::::::::.::.:: .::    .::::   .:::   .::      .::  .::.::  .::::   
-                          Copyright (c) 2016-2018 liberxue
-                                 http://www.liberxue.com
-                           
-#### liberxue.github.io preview (demo) (http://www.liberxue.com)
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>潇洒空间|欢迎来到我的主场~</title>
+    <meta name="keywords" content="潇洒空间">
+    <meta name="description" content="潇洒空间">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
 
-#### `Jekyll Themes`
-----------
-[简体中文版帮助文档README](/ChinaREADME.md)
-#### ``Lightweight``  ``Minimalist``  ``Jekyll blog``
+<body>
+    <div class="box">
+        <!-- 动态背景 -->
+        <video src="bg.mp4" autoplay muted loop></video>
 
-#### The first step is to click [fork][https://github.com/liberxue/liberxue.github.io/fork]
-#### The second step is to modify the _config.yml in URL for your domain name
+        <div class="content">
 
-#### OK all right, it's that simple
+            <!-- <div class="picture">
+                <img src="imgaes/1.jpg" alt="">
+            </div> -->
+            <div class="ide">
 
-#### I don't want any copyright also don't need you to donate, I only need you with a star 🌟  Thx 😄
-
-- [x] Automatic generation tag
-- [x] Automatic generation of JSON search
-- [x] Adaptive template
-- [x] Automatic generation of feed.xml
-- [x] Automatic paging generation
-- [x] Modify _config.yml's links for your menu
-- [x] Modify the _config.yml of paginate for how many pages you want to page
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/Liberxue/liberxue.github.io.svg)](https://starchart.cc/Liberxue/liberxue.github.io)
-
-![uiliberxue](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/ui.jpg) 
-
- ![archives](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/archives.png) 
-
- ![blog](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/blog.png) 
-
- ![tags](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/tags.png) 
-
-  ![404](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/404.png) 
-
- ----------
-![blog JSON search](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/01.gif) 
-
-#### 1.First step Click[fork](https://github.com/Liberxue/liberxue.github.io#fork-destination-box)
- 
-----
-
-![fork](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/02.gif)
-  
-  
+                <img src="https://picshack.net/ib/iSjJFxtWtL.jpeg" alt="">
+                <h2>☂潇洒✪空间☂</h2>
+                <span><i class="fa fa-map-marker fa-lg"></i>中国 . 大陆</span>
+                <span>爱好：游戏丶健身丶美食</span>
+                <span>凡前呼后拥才敢说话的人，心底必然藏着怯弱。</span>
+                <span>---------常用链接---------</span>	
+				<li><a href="http://wpa.qq.com/msgrd?v=3&uin=309659995&site=qq&menu=yes" target="_blank">企鹅<i class="fa fa-qq"></i></a></li>
+				<li><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=dUwNmXfAn6rzsBzYpSQ0HXyFCq1kOxsQ&authKey=LPI29fBwklRKF%2BvUMSZEw8cTuIJS%2FMTsv%2BANIKV%2F%2B9ImMg30dzKZ7%2FA6XnxDCLZq&noverify=0&group_code=498805280" target="_blank">鹅群<i class="fa fa-users"></i></a></li>
+				<li><a href="mailto:b@xsvip666.eu.org" target="_blank">邮箱</a></li>
+				<li><a href="https://yxcqr.github.io/xsvip.github.io/" target="_blank">My GitHub</a></li>             
+            </div>		
 
 
-#### 2. modify _config.yml url URL for your domain
+        </div>
 
-![modify _config.yml url URL for your domain](https://raw.githubusercontent.com/Liberxue/liberxue.github.io/master/thumbnails/04.gif)
-  
+    </div>
+    <div id="aplayer" class="aplayer" data-order="random" data-id="5210965038" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-volume="0.8"></div>
+    <!-- aplayer -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>
+    <!-- end_aplayer -->
+
+</body>
 
 
-
-* [Issues](https://github.com/Liberxue/liberxue.github.io/issues)
- 
-* [Email](mailto:liberxue@gmail.com)
- 
-* [Twitter](https://twitter.com/liberxue).
-
+</html>
