@@ -21,6 +21,7 @@ tags:
 本软件主要是为了批量计算、批量校验文件的哈希值而设计，减少批量计算、校验、统计的麻烦。
 用来计算单个文件的哈希值也很方便。
 本软件是开源软件，遵守 GNU General Public License v3.0 开源协议，源代码托管在 GitHub 和 Gitee 上。
+
 [2]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/2.png
 ![图2][2]
 
