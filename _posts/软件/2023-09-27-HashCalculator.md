@@ -12,10 +12,8 @@ tags:
 - 学习
 ---
 
-HashCalculator
-开源地址；https://github.com/hrpzcf/HashCalculator
-
 文件哈希值批量计算器 (HashCalculator)
+
 [1]:https://ghproxy.com/https://raw.githubusercontent.com/yxcqr/yxcqr.github.io/master/style/images/HashCalculator/1.png
 ![图1][1]
 软件简介
@@ -46,6 +44,7 @@ HashCalculator
 蓝奏云下载：
 https://wwef.lanzoul.com/b087mkn7i 密码:4mn3
 
-
+HashCalculator
+开源地址；https://github.com/hrpzcf/HashCalculator
 
   
