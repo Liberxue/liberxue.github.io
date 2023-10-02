@@ -41,9 +41,9 @@
     <h1 class="post-title" itemprop="name headline">
 	{{ page.title }}</h1>
 		 <div class="post-data">  
-	 <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">发布时间：{{ page.date | date: "%F %H:%M:%S"}}</time>
-     <a href="/tags#{{ page.category }}" title="访问 {{ page.category }}" data-hover="博客分类: {{ page.category }}">博客分类: {{ page.category }}</a>
-    <a href="#read"> 阅读次数: comments</a> 
+	 <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">Release at：{{ page.date | date: "%F %H:%M:%S"}}</time>
+     <a href="/tags#{{ page.category }}" title="访问 {{ page.category }}" data-hover="博客分类: {{ page.category }}">Category: {{ page.category }}</a>
+    <a href="#read"> Reads: comments</a> 
 			</div>
             <div class="post-tags">
                 {% unless page.tags == empty %}
@@ -99,7 +99,7 @@
 </p>
 {{ content }}
 		<p class="post-info">
-			本文由 <a href="/">liberxue</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:{{ page.date | date: "%F %H:%M:%S"}}</p>
+			This article is original by <a href="/">liberxue</a>，licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow"></a> Creative Commons Attribution 4.0 International (CC BY 4.0) License<br>Last editting:{{ page.date | date: "%F %H:%M:%S"}}</p>
 	</div>
 </article>
 
